@@ -1,0 +1,32 @@
+{
+  "name": "tfg-node",
+  "version": "0.1.0",
+  "description": "Trabajo de fin de grado con Node, Firebase y TailWind",
+  "main": "index.js",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "nodemon": "^2.0.7",
+    "postcss": "^8.2.8",
+    "tailwindcss": "^2.0.3"
+  },
+  "scripts": {
+    "start": "node ./src",
+    "dev": "nodemon ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisPFdez/TFG-Node.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuisPFdez/TFG-Node/issues"
+  },
+  "homepage": "https://github.com/LuisPFdez/TFG-Node#readme"
+}
