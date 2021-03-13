@@ -11,9 +11,6 @@ var UsuariosDB = (admin.firestore()).collection("Usuarios")
 
 class UsuarioDB {
 
-
-
-
     //Comprueba si existe algun usuario con el codigo pasado por parametro
     static validarCodNoExiste(codUsuario) {
         //Busca un documento con el codigo de usuario pasado por parametro y ejecuta la funcion get
@@ -22,7 +19,6 @@ class UsuarioDB {
         return UsuariosDB.doc(codUsuario).get()
             .then(datos => datos.exists)
             .catch(error => {
-                console.log("Entra here");
                 throw new ErrorDB("Error al conectar con la base de datos, error devuelto: " + error)
             });
         /* Codigo de forma mas legible, en este caso la funcion debera de ser async 
@@ -36,11 +32,39 @@ class UsuarioDB {
 
     };
 
-    static async crearUsuario(codUsuario, password, descripcion) {
-        if (await UsuarioDB.validarCodNoExiste(codUsuario)) {
+    static async buscarUsuario(codUsuario) {
+        try {
+            if (!await UsuarioDB.validarCodNoExiste(codUsuario)) {
+                return null;
+            }
+
+            var datos = await UsuariosDB.doc(codUsuario).get()
+                .then(datos => datos.data())
+                .catch(err => { throw new ErrorDB(err) });
+            console.log(Usuario.crearUsuarioDeObjeto(datos));
+            return Usuario.crearUsuarioDeObjeto(datos);
+
+        } catch {
+            console.log("Error al ejecuatar operacion en la base de datos: ", error);
             return null;
         }
-        // var usuario = new Usuario(codUsuario, password, descripcion);
+    }
+
+
+    static async crearUsuario(codUsuario, password, descripcion, tipo = null) {
+        try {
+            if (await UsuarioDB.validarCodNoExiste(codUsuario)) {
+                return null;
+            }
+            var usuario = new Usuario(codUsuario, password, descripcion, tipo);
+            
+            await UsuariosDB.doc(usuario.codUsuario).set(usuario)
+                .catch((err) => { throw new ErrorDB(err) });
+            return Usuario;
+        } catch {
+            console.log("Error al ejecuatar operacion en la base de datos: ", error);
+            return null;
+        }
 
     }
 

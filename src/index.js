@@ -2,12 +2,12 @@ const UsuarioDB = require("./model/UsuarioDB");
 
 async function comp() {
 
-    var existe = await UsuarioDB.validarCodNoExiste("Admin");
-
-    console.log(existe);
+    var existe = await UsuarioDB.buscarUsuario("Admin");
+    
+    
 }
-
-comp();
+console.log("Inicio aplicacion")
+// comp();
 
 
 // const https = require("https");
