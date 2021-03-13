@@ -6,7 +6,7 @@ class Usuario {
         if (tipo == null) tipo = "Usuario";
         if (Usuario.tipos.includes(tipo)) {
             this.codUsuario = codUsuario;
-            if (encriptar) this.password = this.encriptarPassword(password);
+            if (encriptar) this.password = Usuario.encriptarPassword(this.codUsuario, password);
             else this.password = password
             this.descripcion = descripcion;
             this.tipo = tipo;
@@ -14,15 +14,24 @@ class Usuario {
             throw new ErrorUsuario("Error, el tipo de usuario no es valido");
         }
     }
-    encriptarPassword(password) {
-        return SHA2(this.codUsuario + password).toString();
-
-    }
 
     cambiarPassword(password) {
-        this.password = SHA2(this.codUsuario + password).toString();
+        this.password = Usuario.encriptarPassword(this.codUsuario, password);
     }
 
+    crearObjecto() {
+        return {
+            codUsuario: this.codUsuario,
+            password: this.password,
+            descripcion: this.descripcion,
+            tipo: this.tipo
+        };
+    }
+
+    static encriptarPassword(codUsuario, password) {
+        return SHA2(codUsuario + password).toString();
+
+    }
     static crearUsuarioDeObjeto(objeto, encriptar = false) {
         return new Usuario(objeto.codUsuario, objeto.password, objeto.descripcion, objeto.tipo, encriptar);
     }

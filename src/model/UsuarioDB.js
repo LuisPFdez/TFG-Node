@@ -34,22 +34,34 @@ class UsuarioDB {
 
     static async buscarUsuario(codUsuario) {
         try {
-            if (!await UsuarioDB.validarCodNoExiste(codUsuario)) {
+            console.log("Entra en buscar usuario");
+            if (! await UsuarioDB.validarCodNoExiste(codUsuario)) {
                 return null;
             }
 
             var datos = await UsuariosDB.doc(codUsuario).get()
                 .then(datos => datos.data())
                 .catch(err => { throw new ErrorDB(err) });
-            console.log(Usuario.crearUsuarioDeObjeto(datos));
             return Usuario.crearUsuarioDeObjeto(datos);
 
-        } catch {
+        } catch (error) {
             console.log("Error al ejecuatar operacion en la base de datos: ", error);
             return null;
         }
     }
 
+    static async borrarUsuario(codUsuario) {
+        try {
+            if (! await UsuarioDB.validarCodNoExiste(codUsuario)) {
+                return false;
+            }
+            await UsuariosDB.doc(codUsuario).delete().catch((err) => { throw new ErrorDB(err) });
+            return true;
+        } catch (error) {
+            console.log("Error al ejecuatar operacion en la base de datos: ", error);
+            return false;
+        }
+    }
 
     static async crearUsuario(codUsuario, password, descripcion, tipo = null) {
         try {
@@ -57,11 +69,15 @@ class UsuarioDB {
                 return null;
             }
             var usuario = new Usuario(codUsuario, password, descripcion, tipo);
-            
-            await UsuariosDB.doc(usuario.codUsuario).set(usuario)
+            // Object.create()
+            var oUsuario = usuario.crearObjecto();
+            var oS = Object.create(usuario);
+            console.log("Crear usuario")
+            console.log(oUsuario);
+            await UsuariosDB.doc(usuario.codUsuario).set(oUsuario)
                 .catch((err) => { throw new ErrorDB(err) });
-            return Usuario;
-        } catch {
+            return usuario;
+        } catch (error) {
             console.log("Error al ejecuatar operacion en la base de datos: ", error);
             return null;
         }
