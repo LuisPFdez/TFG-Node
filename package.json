@@ -10,14 +10,23 @@
     "firebase-admin": "^9.5.0"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.0.1",
+    "@types/express": "^4.17.11",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
     "autoprefixer": "^10.2.5",
+    "copyfiles": "^2.4.1",
+    "eslint": "^7.22.0",
     "nodemon": "^2.0.7",
     "postcss": "^8.2.8",
-    "tailwindcss": "^2.0.3"
+    "tailwindcss": "^2.0.3",
+    "typescript": "^4.2.3"
   },
   "scripts": {
-    "start": "node ./src",
-    "dev": "nodemon ./src"
+    "start": "node ./dist",
+    "dev": "nodemon ./dist",
+    "devBuild": "npm run build && node ./dist",
+    "build": "tsc && copyfiles -u 1 src/**/* -e '**/*.ts' dist/"
   },
   "repository": {
     "type": "git",
