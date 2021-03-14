@@ -4,14 +4,18 @@
   "description": "Trabajo de fin de grado con Node, Firebase y TailWind",
   "main": "index.js",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "crypto-js": "^4.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "firebase-admin": "^9.5.0"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
     "@types/crypto-js": "^4.0.1",
     "@types/express": "^4.17.11",
+    "@types/express-session": "^1.17.3",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "autoprefixer": "^10.2.5",
@@ -24,9 +28,9 @@
   },
   "scripts": {
     "start": "node ./dist",
-    "dev": "nodemon ./dist",
-    "devBuild": "npm run build && node ./dist",
-    "build": "tsc && copyfiles -u 1 src/**/* -e '**/*.ts' dist/"
+    "dev": "npm run build && node ./dist",
+    "build": "tsc && copyfiles -u 1 src/**/* -e '**/*.ts' dist/",
+    "lint": "eslint --ext .ts src/ --no-error-on-unmatched-pattern"
   },
   "repository": {
     "type": "git",

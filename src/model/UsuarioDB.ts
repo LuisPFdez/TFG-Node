@@ -5,24 +5,27 @@
 
 import ErrorDB from "../errors/ErrorDB"
 import Usuario from "./Usuario";
-import * as admin from 'firebase-admin';
+import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
+import admin, { ServiceAccount } from 'firebase-admin';
+import credenciales from "../config/Database.json";
+import GenericoInterface from "../interfaces/GenericoInterface";
 
 admin.initializeApp({
-    credential: admin.credential.cert("../config/Database.json")
+    credential: admin.credential.cert(<ServiceAccount>credenciales)
 });
 
 var UsuariosDB = (admin.firestore()).collection("Usuarios")
 
-export class UsuarioDB {
+export default class UsuarioDB {
 
     //Comprueba si existe algun usuario con el codigo pasado por parametro
-    static validarCodNoExiste(codUsuario:string) {
+    static validarCodNoExiste(codUsuario: string): Promise<boolean> {
         //Busca un documento con el codigo de usuario pasado por parametro y ejecuta la funcion get
         //La funcion get devuelve una promesa, esta es retornada junto con then, que devolvera si el documento existe 
         //Y catch que lanzara un error de la clase ErrorDB
         return UsuariosDB.doc(codUsuario).get()
-            .then((datos: { exists: any; }) => datos.exists)
-            .catch((error:any) => {
+            .then((datos: GenericoInterface): boolean => datos.exists)
+            .catch((error: Error): never => {
                 throw new ErrorDB("Error al conectar con la base de datos, error devuelto: " + error)
             });
         /* Codigo de forma mas legible, en este caso la funcion debera de ser async 
@@ -36,16 +39,16 @@ export class UsuarioDB {
 
     };
 
-    static async buscarUsuario(codUsuario:any) {
+    static async buscarUsuario(codUsuario: any): Promise<Usuario | null> {
         try {
             console.log("Entra en buscar usuario");
             if (! await UsuarioDB.validarCodNoExiste(codUsuario)) {
                 return null;
             }
 
-            var datos = await UsuariosDB.doc(codUsuario).get()
-                .then((datos:any) => datos.data())
-                .catch((error:Error) => { throw new ErrorDB(error.message) });
+            var datos: ObjetoUsuarioInterface = await UsuariosDB.doc(codUsuario).get()
+                .then((datos: GenericoInterface): ObjetoUsuarioInterface => <ObjetoUsuarioInterface>datos.data())
+                .catch((error: Error): never => { throw new ErrorDB(error.message) });
             return Usuario.crearUsuarioDeObjeto(datos);
 
         } catch (error) {
@@ -54,12 +57,12 @@ export class UsuarioDB {
         }
     }
 
-    static async borrarUsuario(codUsuario:any) {
+    static async borrarUsuario(codUsuario: string): Promise<boolean> {
         try {
             if (! await UsuarioDB.validarCodNoExiste(codUsuario)) {
                 return false;
             }
-            await UsuariosDB.doc(codUsuario).delete().catch((error:Error) => { throw new ErrorDB(error.message) });
+            await UsuariosDB.doc(codUsuario).delete().catch((error: Error): never => { throw new ErrorDB(error.message) });
             return true;
         } catch (error) {
             console.log("Error al ejecuatar operacion en la base de datos: ", error);
@@ -67,27 +70,21 @@ export class UsuarioDB {
         }
     }
 
-    static async crearUsuario(codUsuario:any, password:any, descripcion:any, tipo = null) {
+    static async crearUsuario(codUsuario: string, password: string, descripcion: string, tipo: string | null = null): Promise<Usuario | null> {
         try {
             if (await UsuarioDB.validarCodNoExiste(codUsuario)) {
                 return null;
             }
             var usuario = new Usuario(codUsuario, password, descripcion, tipo);
-            // Object.create()
             var oUsuario = usuario.crearObjecto();
-            var oS = Object.create(usuario);
-            console.log("Crear usuario")
-            console.log(oUsuario);
             await UsuariosDB.doc(usuario.codUsuario).set(oUsuario)
-                .catch((error:Error) => { throw new ErrorDB(error.message) });
+                .catch((error: Error): never => { throw new ErrorDB(error.message) });
             return usuario;
         } catch (error) {
             console.log("Error al ejecuatar operacion en la base de datos: ", error);
             return null;
         }
-
     }
-
 }
 
 // module.exports = UsuarioDB;

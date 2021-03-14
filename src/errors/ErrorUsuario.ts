@@ -4,5 +4,3 @@ export default class ErrorUsuario extends Error{
         this.name = "ErrorUsuario";
     }
 }
-
-// module.exports = ErrorUsuario;

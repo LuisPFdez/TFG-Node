@@ -2,31 +2,18 @@
 import { SHA256 as SHA2 } from "crypto-js";
 import ErrorUsuario from "../errors/ErrorUsuario";
 import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
+import UsuarioInterface from "../interfaces/UsuarioInterface";
 
-export enum Tipos {
-    Admin = "Admin",
-    Usuario = "Usuario"
-}
-
-interface UsuarioInterface {
-    codUsuario: string;
-    password: string;
-    descripcion: string;
-    tipo: string;
-
-    cambiarPassword(password: string): void;
-    crearObjecto(): ObjetoUsuarioInterface;
-
-}
 
 export default class Usuario implements UsuarioInterface {
+    static tipos:Array<String> = ["Admin", "Usuario"];
     codUsuario: string;
     password: string;
     descripcion: string;
     tipo: string;
     constructor(codUsuario: string, password: string, descripcion: string, tipo: string | null = "Usuario", encriptar = true) {
         if (tipo == null) tipo = "Usuario";
-        if (tipo in Tipos) {
+        if (Usuario.tipos.includes(tipo)) {
             this.codUsuario = codUsuario;
             if (encriptar) this.password = Usuario.encriptarPassword(this.codUsuario, password);
             else this.password = password
@@ -35,11 +22,10 @@ export default class Usuario implements UsuarioInterface {
         } else {
             throw new ErrorUsuario("Error, el tipo de usuario no es valido");
         }
-        Tipos
     }
     
 
-    cambiarPassword(password: string) {
+    cambiarPassword(password: string):void {
         this.password = Usuario.encriptarPassword(this.codUsuario, password);
     }
 
@@ -52,7 +38,7 @@ export default class Usuario implements UsuarioInterface {
         };
     }
 
-    static encriptarPassword(codUsuario: string, password: string) {
+    static encriptarPassword(codUsuario: string, password: string):string {
         return SHA2(codUsuario + password).toString();
 
     }

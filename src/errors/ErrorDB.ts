@@ -4,5 +4,3 @@ export default class ErrorDB extends Error {
         this.name = "ErrorDB";
     }
 }
-
-// module.exports = ErrorDB;
