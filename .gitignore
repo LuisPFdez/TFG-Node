@@ -1,4 +1,6 @@
 /node_modules
 /package-lock.json
-/src/config/Database.json
+/src/config/ConfigDB.json
+/src/config/clave.key
+/src/config/clave.crt
 /dist

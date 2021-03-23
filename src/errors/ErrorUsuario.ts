@@ -1,6 +1,12 @@
-export default class ErrorUsuario extends Error{
-    constructor(msg = "Error, algo ha fallado en la clase Usuario"){
+export default class ErrorUsuario extends Error {
+    codigo: number;
+    constructor(msg: string, codigo?: number) {
         super(msg);
         this.name = "ErrorUsuario";
+        if (codigo != undefined) {
+            this.codigo = codigo;
+        } else {
+            this.codigo = 500;
+        }
     }
 }

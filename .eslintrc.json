@@ -15,5 +15,22 @@
     },
     "plugins": [
         "@typescript-eslint"
-    ]
+    ],
+    "rules": {
+        "default-param-last": "error",
+        "@typescript-eslint/no-inferrable-types": [
+            "error",
+            {
+                "ignoreParameters": true
+            }
+        ],
+        "@typescript-eslint/semi": [
+            "error",
+            "always",
+            {
+                "omitLastInOneLineBlock": true
+            }
+        ]
+        // "@typescript-eslint/no-namespace": 
+    }
 }

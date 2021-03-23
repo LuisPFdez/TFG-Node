@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+    <link rel="stylesheet" href="estilo.css">
+    <title>TFG-Node</title>
+</head>
+
+<body>
+    <header>
+        <h2>TFG-Node</h2>
+        <h3>
+            <!-- El título se pasará por variable, cambiando según la página en la que se encuentre -->
+            <%= titulo %>
+        </h3>
+    </header>
+    <main>
+        <!-- 
+            No todas las paginas necesitan ser incluidas con pasandole parametros.
+            En caso de estar definido, se incluiran con datos. El include necesita de una variable para saber que incluir
+        -->
+        <% if( typeof datos != 'undefined' ) { %>
+            <%- include(archivo, datos)%>
+        <% } else { %>
+            <%- include(archivo)%>
+        <% } %>
+    </main>
+    <footer>
+        &copy;Luis Puente Fernandez
+    </footer>
+</body>
+
+</html>

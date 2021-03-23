@@ -1,0 +1,12 @@
+{
+    "Puerto": 3000,
+    "N_Cert": "clave",
+    "Rutas": {
+        "layout": "layout",
+        "error": "Error/error",
+        "index": "Principal/index",
+        "login": "Principal/login",
+        "registro":"Principal/registro",
+        "inicio": "App/inicio"
+    }
+}
