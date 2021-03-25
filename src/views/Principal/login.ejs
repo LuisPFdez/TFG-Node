@@ -1,8 +1,13 @@
-<form action="/login" method="post">
-    <label>Usuario: </label>
-    <input type="text" name="usuario">
-    <label>Usuario: </label>
-    <input type="password" name="password">
-    <button type="submit" name="login">Login</button>
+<form action="/login" method="POST">
+    <label>Usuario: </label><br>
+    <input type="text" name="usuario" value="<%= typeof usuario != 'undefined' ? usuario : '' ;   %>"><br>
+    <label>Usuario: </label><br>
+    <input type="password" name="password"><br>
+    <%if (typeof error !='undefined' ){%>
+        <span>
+            <%= error %>
+        </span><br>
+    <%}%>
+    <button type="submit" name="login">Iniciar Sesión</button><br>
     <button type="submit" name="volver">Volver</button>
 </form>

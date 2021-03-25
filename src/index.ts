@@ -7,6 +7,7 @@ import { readFileSync } from "fs";
 import https from "https";
 import path from "path";
 import index from "./routes/index";
+import appRuta from "./routes/app";
 import config from "./config/Config.json";
 
 declare module 'express-session' {
@@ -46,6 +47,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(index);
+app.use("/app", appRuta);
+
 
 //Los middleware para el manejo de errores han de tener obligatoriamente 4 argumentos. El siguente comentario desactiva el warning de esLint
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

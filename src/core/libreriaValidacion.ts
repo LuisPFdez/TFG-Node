@@ -1,19 +1,20 @@
 /**
- * Indica que la variable que tenga stNull puede ser un string o null
- */
-type stNull = string | null;
-
-
-/**
  * ---------------------------------------------------------------------------------------------------------------------------------------------------
  *                           La libreria base de php, tiene ciertos problemas en la lógica que pueden ocasionar cierto problemas.                     
  *                                       Estos errores no se han corregido al ser adaptada a typescript                                               
  * ---------------------------------------------------------------------------------------------------------------------------------------------------
  * @file Fichero con la clase validacionFormulario, que contiene funciones para validar los campos de los formularios
  * La clase es una adaptación de https://github.com/JavierNLSauces/libreriaValidacion. Se adaptan los metodos necesarios para la aplicación
+ * Tambien contiene el tipo stNull.
  * @author Luis Puente Fernández
  * 
  */
+
+/**
+ * Indica que la variable que tenga stNull puede ser un string o null
+ */
+export type stNull = string | null;
+
 
 
 export default class validacionFormuarios {
@@ -105,5 +106,4 @@ export default class validacionFormuarios {
         }
         return mensajeError;
     }
-
 }

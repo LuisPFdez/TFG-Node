@@ -1,0 +1,16 @@
+<!-- Formulario de registro -->
+<form action="" method="POST">
+    <label>Usuario</label>
+    <input type="text" name="usuario" value="<%= typeof usuario != 'undefined' ? usuario : '' ;   %>">
+    <label>Descripcion</label>
+    <input type="text" name="descripcion" value="<%= typeof descripcion != 'undefined' ? descripcion : '' ;   %>">
+    <label>Contraseña</label>
+    <input type="password" name="password" value="<%= %>">
+    <label>Confirmar Contraseña</label>
+    <input type="password" name="passwordC">
+    <!-- <%if (typeof errorPas !='undefined' ){%>
+        <span>
+            <%= errorPas %>
+        </span><br>
+    <%}%> -->
+</form>

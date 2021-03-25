@@ -1,8 +1,3 @@
-// const Usuario = require("./Usuario");
-// const ErrorDB = require("../errors/ErrorDB");
-// const {conectar} = require("./DB");
-// const admin = require("firebase-admin")
-
 import ErrorDB from "../errors/ErrorDB";
 import { Usuario, Tipos } from "./Usuario";
 import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
@@ -15,6 +10,7 @@ admin.initializeApp({
 });
 
 const UsuariosDB = (admin.firestore()).collection("Usuarios");
+type usNull = Usuario | null;
 
 export default class UsuarioDB {
 
@@ -39,19 +35,26 @@ export default class UsuarioDB {
 
     }
 
-    static async validadUsuario(codUsuario: string, password: string): Promise<boolean> {
+    static async validadUsuario(codUsuario: string, password: string): Promise<usNull> {
 
         if (! await UsuarioDB.validarCodExiste(codUsuario)) {
-            return false;
+            return null;
         }
+
         const passwordE: string = Usuario.encriptarPassword(codUsuario, password);
+
         return UsuariosDB.doc(codUsuario).get()
-            .then((datos: DocumentData): boolean => datos.data().password == passwordE)
-            .catch((error: Error): never => { throw new ErrorDB(error.message) });
+            .then((datos: DocumentData): usNull => {
+                if (datos.exists && datos.data().password == passwordE) {
+                    return <Usuario>datos.data();
+                } else {
+                    return null;
+                }
+            }).catch((error: Error): never => { throw new ErrorDB(error.message) });
 
     }
 
-    static async buscarUsuario(codUsuario: string): Promise<Usuario | null> {
+    static async buscarUsuario(codUsuario: string): Promise<usNull> {
 
         console.log("Entra en buscar usuario");
         if (! await UsuarioDB.validarCodExiste(codUsuario)) {
@@ -76,7 +79,7 @@ export default class UsuarioDB {
 
     }
 
-    static async crearUsuario(codUsuario: string, password: string, descripcion: string, tipo: string | null = null): Promise<Usuario | null> {
+    static async crearUsuario(codUsuario: string, password: string, descripcion: string, tipo: string | null = null): Promise<usNull> {
 
         if (await UsuarioDB.validarCodExiste(codUsuario)) {
             return null;

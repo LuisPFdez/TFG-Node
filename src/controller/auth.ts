@@ -9,9 +9,10 @@ import ErrorRoute from "../errors/ErrorRoute";
 //     VER  = "VER", 
 // }
 
+
 function noAutenticado(req: Request, res: Response, next: NextFunction): void {
     if (req.session.usuario) {
-        return res.redirect("/inicio");
+        return res.redirect("/app/inicio");
     } else {
         return next();
     }
@@ -22,7 +23,7 @@ function autenticado(req: Request, res: Response, next: NextFunction): void {
     if (req.session.usuario) {
         return next();
     } else {
-        return res.redirect(401, "/login");
+        return res.redirect("/login");
     }
 }
 
@@ -41,7 +42,5 @@ function bodyDefinido(req: Request, res: Response, next: NextFunction): void {
 //         res.redirect("/inicio");
 //     }
 // }
-export {
-    noAutenticado, autenticado, bodyDefinido
-};
+export { noAutenticado, autenticado, bodyDefinido };
 
