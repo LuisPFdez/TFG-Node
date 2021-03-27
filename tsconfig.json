@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "rootDir": "./src",
     "target": "ES2020",
     "module": "commonjs",
     "lib": [
@@ -15,9 +16,9 @@
     "removeComments": true
   },
   "include": [
-    "./src/**/*"
+    "**/*.ts"
   ],
   "exclude": [
-    ""
+    "**/*.js"
   ]
 }
