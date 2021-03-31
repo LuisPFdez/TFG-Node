@@ -1,12 +1,8 @@
-export default class ErrorRoute extends Error {
-    codigo: number;
+import CodigoError from "./CodigoError";
+
+export default class ErrorRoute extends CodigoError {
     constructor(msg: string, codigo?: number) {
-        super(msg);
+        super(msg, codigo);
         this.name = "ErrorRoute";
-        if (codigo != undefined) {
-            this.codigo = codigo;
-        } else {
-            this.codigo = 500;
-        }
     }
 }

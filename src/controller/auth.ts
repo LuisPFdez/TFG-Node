@@ -34,6 +34,29 @@ function bodyDefinido(req: Request, res: Response, next: NextFunction): void {
         return next();
     }
 }
+/**
+ * Aunque exista un middleware para el manejo de errores, si una funcion o metodo externo lanza una excepcion, el middleware sera incapaz de capturarla.
+ * Esta funcion evita tener que llenar todas las rutas de bloques try catch o de catch para promesas. 
+ * @param func una funcion que tendra por parametros req (de tipo Request) y res (de tipo Response) y devolverá void
+ * @returns una funcion ( devuelve void) que capturará todos los errores de la funcion y los pasará al middleware
+ */
+function manejadorErrores(func: (req: Request, res: Response) => void): (req: Request, res: Response, next: NextFunction) => void {
+    return (req: Request, res: Response, next: NextFunction): void => {
+        Promise.resolve(func(req, res)).catch(next);
+    };
+}
+/**
+ * Aunque exista un middleware para el manejo de errores, si una funcion o metodo externo lanza una excepcion, el middleware sera incapaz de capturarla.
+ * Esta funcion evita tener que llenar todas las rutas de bloques try catch o de catch para promesas. 
+ * @param func una funcion que tendra por parametros req (de tipo Request) y res (de tipo Response) y devolverá void
+ * @returns una funcion ( devuelve void) que capturará todos los errores de la funcion y los pasará al middleware
+ */
+function manejadorErroresNext(func: (req: Request, res: Response, next:NextFunction) => void): (req: Request, res: Response, next: NextFunction) => void {
+    return (req: Request, res: Response, next: NextFunction): void => {
+        Promise.resolve(func(req, res, next)).catch(next);
+    };
+}
+
 
 // permisos(req: Request, res: Response, next: NextFunction): void {
 //     if (req.session.usuario?.tipo == Tipos.ADMIN) {
@@ -42,5 +65,5 @@ function bodyDefinido(req: Request, res: Response, next: NextFunction): void {
 //         res.redirect("/inicio");
 //     }
 // }
-export { noAutenticado, autenticado, bodyDefinido };
+export { noAutenticado, autenticado, bodyDefinido, manejadorErrores, manejadorErroresNext };
 

@@ -1,8 +1,9 @@
+import { DocumentData } from "@google-cloud/firestore";
+import admin, { ServiceAccount } from 'firebase-admin';
+
 import ErrorDB from "../errors/ErrorDB";
 import { Usuario, Tipos } from "./Usuario";
 import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
-import admin, { ServiceAccount } from 'firebase-admin';
-import { DocumentData } from "@google-cloud/firestore";
 import credenciales from "../config/ConfigDB.json";
 
 admin.initializeApp({

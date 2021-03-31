@@ -1,12 +1,8 @@
-export default class ErrorUsuario extends Error {
-    codigo: number;
+import CodigoError from "./CodigoError";
+
+export default class ErrorUsuario extends CodigoError {
     constructor(msg: string, codigo?: number) {
-        super(msg);
+        super(msg, codigo);
         this.name = "ErrorUsuario";
-        if (codigo != undefined) {
-            this.codigo = codigo;
-        } else {
-            this.codigo = 500;
-        }
     }
 }

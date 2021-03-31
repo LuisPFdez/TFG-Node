@@ -1,11 +1,14 @@
 // const SHA2 = require("crypto-js/sha256")
 import { SHA256 as SHA2 } from "crypto-js";
+
 import ErrorUsuario from "../errors/ErrorUsuario";
 import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
 import UsuarioInterface from "../interfaces/UsuarioInterface";
 //Tipos de usuario, estos tipos definiran sus permisos
 export enum Tipos {
     ADMIN = "ADMIN",
+    SEMI_ADMIN = "SEMI_ADMIN",
+    SUPER_USUARIO = "SUPER_USUARIO",
     USUARIO = "USUARIO"
 }
 

@@ -29,7 +29,7 @@
   "scripts": {
     "start": "node ./dist",
     "dev": "npm run lint && npm run build && node ./dist",
-    "build": "tsc && copyfiles -u 1 src/**/* -e '**/*.ts' dist/",
+    "build": "npm run lint && tsc && copyfiles -u 1 src/**/* -e '**/*.ts' dist/",
     "lint": "eslint --ext .ts src/ --no-error-on-unmatched-pattern"
   },
   "repository": {

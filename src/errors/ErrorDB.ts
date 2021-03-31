@@ -1,12 +1,8 @@
-export default class ErrorDB extends Error {
-    codigo: number;
+import CodigoError from "./CodigoError";
+
+export default class ErrorDB extends CodigoError {
     constructor(msg: string, codigo?: number) {
-        super(msg);
+        super(msg, codigo);
         this.name = "ErrorDB";
-        if (codigo != undefined) {
-            this.codigo = codigo;
-        } else {
-            this.codigo = 500;
-        }
     }
 }
