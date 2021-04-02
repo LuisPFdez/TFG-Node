@@ -11,9 +11,9 @@
  */
 
 /**
- * Indica que la variable que tenga stNull puede ser un string o null
+ * El tipo es redefinido para evitar que la libreria sea dependientre del proyecto
  */
-export type stNull = string | null;
+type stNull = string | null;
 
 
 
@@ -78,11 +78,41 @@ export default class validacionFormuarios {
         return mensajeError;
     }
 
+    public static validarPassword(passwd: string, maximo: number = 16, minimo: number = 2, tipo: number = 2, obligatorio: boolean = true): stNull {  //CAMBIADO ORDEN DE LOS PARAMETROS, AÑADIDOS PARAMETROS PREDEFINIDOS Y MEJORADA LA RESPUESTA
+        let mensajeError: stNull = null;
+        if (obligatorio) {
+            mensajeError = this.comprobarNoVacio(passwd);
+        }
+        if (passwd.length < minimo && passwd) {
+            mensajeError = this.concatenar(mensajeError, " La contraseña debe ser de al menos " + minimo + " caracteres.");
+        }
+        if (passwd.length > maximo && passwd) {
+            mensajeError = this.concatenar(mensajeError, " La contraseña debe tener como maximo " + maximo + " caracteres.");
+        }
+        if (passwd && mensajeError == null) {
+            switch (tipo) {
+                case 1:
+                    mensajeError = this.concatenar(mensajeError, this.comprobarAlfabetico(passwd, maximo, minimo, obligatorio));
+                    break;
+                case 2:
+                    mensajeError = this.concatenar(mensajeError, this.comprobarAlfaNumerico(passwd, maximo, minimo, obligatorio));
+                    break;
+                case 3:
+                    if ((! /[A-Z]/.test(passwd) || ! /[0-9]/.test(passwd)) && passwd) {
+                        mensajeError = this.concatenar(mensajeError, " La contraseña debe contener una mayúscula y un número.");
+                    }
+                    break;
+            }
+        }
+
+        return mensajeError;
+    }
+
     public static comprobarMaxTamanio(cadena: string, tamanio: number): stNull {
         let mensajeError: stNull = null;
 
         if (cadena.length > tamanio) {
-            mensajeError = " El tamañio máximo es de " + tamanio + " caracteres.";
+            mensajeError = " El tamaño máximo es de " + tamanio + " caracteres.";
         }
 
         return mensajeError;
@@ -92,7 +122,7 @@ export default class validacionFormuarios {
         let mensajeError: stNull = null;
 
         if (cadena.length < tamanio) {
-            mensajeError = " El tamañio minimo es de " + tamanio + " caracteres.";
+            mensajeError = " El tamaño minimo es de " + tamanio + " caracteres.";
         }
 
         return mensajeError;

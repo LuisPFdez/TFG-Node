@@ -5,13 +5,13 @@ import ErrorDB from "../errors/ErrorDB";
 import { Usuario, Tipos } from "./Usuario";
 import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
 import credenciales from "../config/ConfigDB.json";
-
+import {stNull, usNull} from "../controller/types";
 admin.initializeApp({
     credential: admin.credential.cert(<ServiceAccount>credenciales)
 });
 
 const UsuariosDB = (admin.firestore()).collection("Usuarios");
-type usNull = Usuario | null;
+
 
 export default class UsuarioDB {
 
@@ -80,7 +80,7 @@ export default class UsuarioDB {
 
     }
 
-    static async crearUsuario(codUsuario: string, password: string, descripcion: string, tipo: string | null = null): Promise<usNull> {
+    static async crearUsuario(codUsuario: string, password: string, descripcion: string, tipo:stNull = null): Promise<usNull> {
 
         if (await UsuarioDB.validarCodExiste(codUsuario)) {
             return null;
@@ -93,7 +93,7 @@ export default class UsuarioDB {
 
     }
 
-    static async modificarUSuario(codUsuario: string, descripcion: string, tipo: string | null = null): Promise<boolean> {
+    static async modificarUSuario(codUsuario: string, descripcion: string, tipo:stNull= null): Promise<boolean> {
 
         if (! await UsuarioDB.validarCodExiste(codUsuario)) {
             return false;

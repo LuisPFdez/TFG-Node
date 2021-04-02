@@ -1,4 +1,3 @@
-// import UsuarioDB from "./model/UsuarioDB";
 import express, { Express, NextFunction, Request, Response } from 'express';
 import cookie_parser from "cookie-parser";
 import session from "express-session";
@@ -11,6 +10,7 @@ import index from "./routes/index";
 import appRuta from "./routes/app";
 import config from "./config/Config.json";
 
+//Indica que en el modulo express-session se ampliará la interface de SessionData (conocido como Declaration Merging)
 declare module 'express-session' {
     interface SessionData {
         usuario?: Usuario;
