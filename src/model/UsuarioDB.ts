@@ -113,7 +113,7 @@ export default class UsuarioDB {
     }
 
     static async modificarPassword(codUsuario: string, password: string,): Promise<boolean> {
-
+        console.log(password);
         if (! await UsuarioDB.validarCodExiste(codUsuario)) {
             return false;
         }

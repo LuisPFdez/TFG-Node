@@ -1,0 +1,14 @@
+<form action="/app/modificar_password" method="POST">
+    <label>Contraseña</label>
+    <input type="password" name="password"><br>
+    <%if (typeof password !='undefined' && password != null ){%>
+        <span><%= password %></span><br>
+    <%}%>
+    <label>Confirmar Contraseña</label>
+    <input type="password" name="passwordC"><br>
+    <%if (typeof passwordC !='undefined' && passwordC != null ){%>
+        <span><%= passwordC %></span><br>
+    <%}%>
+    <button type="submit" name="cambiar">Cambiar Contraseña</button><br>
+    <button type="submit" name="cancelar">Cancelar</button>
+</form>

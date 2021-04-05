@@ -1,7 +1,7 @@
 <form action="/login" method="POST">
     <label>Usuario: </label><br>
     <input type="text" name="usuario" value="<%= typeof usuario != 'undefined' ? usuario : '' ;   %>"><br>
-    <label>Usuario: </label><br>
+    <label>Contraseña: </label><br>
     <input type="password" name="password"><br>
     <%if (typeof error !='undefined' ){%>
         <span>

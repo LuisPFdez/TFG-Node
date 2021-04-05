@@ -18,6 +18,7 @@ export class Usuario implements UsuarioInterface {
     password: string;
     descripcion: string;
     tipo: string;
+
     constructor(codUsuario: string, password: string, descripcion: string, tipo: string | null = "Usuario", encriptar = true) {
         if (tipo == null) tipo = Tipos.USUARIO;
         if (tipo in Tipos) {
@@ -30,7 +31,6 @@ export class Usuario implements UsuarioInterface {
             throw new ErrorUsuario("Error, el tipo de usuario no es valido");
         }
     }
-
 
     cambiarPassword(password: string): void {
         this.password = Usuario.encriptarPassword(this.codUsuario, password);

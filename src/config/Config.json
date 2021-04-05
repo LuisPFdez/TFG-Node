@@ -5,8 +5,11 @@
         "layout": "layout",
         "error": "Error/error",
         "index": "Principal/index",
+        "reautenticar": "Principal/reautenticar",
         "login": "Principal/login",
-        "registro":"Principal/registro",
-        "inicio": "App/inicio"
+        "registro": "Principal/registro",
+        "inicio": "App/inicio",
+        "editar": "App/editar",
+        "modificar": "App/modificar"
     }
 }

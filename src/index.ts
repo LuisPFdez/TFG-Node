@@ -14,6 +14,8 @@ import config from "./config/Config.json";
 declare module 'express-session' {
     interface SessionData {
         usuario?: Usuario;
+        urlReautenticar?: string;
+        reautenticado?: boolean;
     }
 }
 
@@ -28,13 +30,14 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use((req: Request, _res: Response, next: NextFunction): void => {
-    console.log(req.method, req.url);
+    console.log(req.method, req.originalUrl);
     next();
 });
 
 app.use(session({
     secret: 'keyboard cat',
-
+    resave: false,
+    saveUninitialized: false
 }));
 app.use(cookie_parser());
 

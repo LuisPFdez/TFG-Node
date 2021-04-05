@@ -1,0 +1,9 @@
+<h2>Por favor <%=  %></h2>
+<form action="/reautenticar" method="POST">
+    <input type="password" name="password"><br>
+    <%if (typeof ePassword !='undefined' ){%>
+        <span><%= ePassword %></span><br>
+    <%}%>
+    <button type="submit" name="aceptar">Entrar</button><br>
+    <button type="submit"name="cancelar">Cancelar</button>
+</form>

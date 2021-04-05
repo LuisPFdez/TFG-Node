@@ -1,23 +1,23 @@
 <!-- Formulario de registro -->
-<form action="" method="POST">
+<form action="/registro" method="POST">
     <label>Usuario</label>
     <input type="text" name="usuario" value="<%= typeof usuario != 'undefined' ? usuario : '' ;   %>"><br>
-    <%if (typeof error !='undefined' && typeof error.usuario !='undefined' ){%>
+    <%if (typeof error !='undefined' && error.usuario != null ){%>
         <span><%= error.usuario %></span><br>
     <%}%>
     <label>Descripcion</label>
     <input type="text" name="descripcion" value="<%= typeof descripcion != 'undefined' ? descripcion : '' ;   %>"><br>
-    <%if (typeof error !='undefined' && typeof error.descripcion !='undefined' ){%>
+    <%if (typeof error !='undefined' && error.descripcion != null ){%>
         <span><%= error.descripcion %></span><br>
     <%}%>
     <label>Contraseña</label>
     <input type="password" name="password"><br>
-    <%if (typeof error !='undefined' && typeof error.password !='undefined' ){%>
+    <%if (typeof error !='undefined' && error.password != null ){%>
         <span><%= error.password %></span><br>
     <%}%>
     <label>Confirmar Contraseña</label>
     <input type="password" name="passwordC"><br>
-    <%if (typeof error !='undefined' && typeof error.passwordC !='undefined' ){%>
+    <%if (typeof error !='undefined' && error.passwordC != null ){%>
         <span><%= error.passwordC %></span><br>
     <%}%>
     <button type="submit" name="registro">Registrarse</button><br>

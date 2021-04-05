@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from "express";
-import ErrorRoute from "../errors/ErrorRoute";
 // import { Tipos } from "../model/Usuario";
 
 // enum Acciones {
@@ -9,7 +8,15 @@ import ErrorRoute from "../errors/ErrorRoute";
 //     VER  = "VER", 
 // }
 
-
+/**
+ * Funcion que comprueba si el usuario esta autenticado o no, en caso de estar autenticado
+ * redirige a /app/inicio, en caso contrario pasará al siguiente middleware. Permite saltarse ciertas acciones que solo los usuarios no autenticados
+ * deberian de hacer, como iniciar sesión
+ * @param req Request
+ * @param res Response
+ * @param next NextFunction
+ * @returns void
+ */
 function noAutenticado(req: Request, res: Response, next: NextFunction): void {
     if (req.session.usuario) {
         return res.redirect("/app/inicio");
@@ -18,7 +25,14 @@ function noAutenticado(req: Request, res: Response, next: NextFunction): void {
     }
 
 }
-
+/**
+ * Funcion que comprueba si el usuario esta autenticado o no, en caso de no estar autenticado 
+ * redirigira al usuario al login, en caso contrario, pasará al siguiente middleware
+ * @param req Request
+ * @param res Response
+ * @param next NextFunction
+ * @returns void
+ */
 function autenticado(req: Request, res: Response, next: NextFunction): void {
     if (req.session.usuario) {
         return next();
@@ -27,36 +41,16 @@ function autenticado(req: Request, res: Response, next: NextFunction): void {
     }
 }
 
-function bodyDefinido(req: Request, res: Response, next: NextFunction): void {
-    if (req.body == undefined) {
-        return next(new ErrorRoute("Error interno en el servidor", 500));
-    } else {
+function reautenticar(req: Request, res: Response, next: NextFunction): void {
+    if (req.session.reautenticado) {
+        req.session.reautenticado = false;
         return next();
+    } else {
+        console.log(req.header('Referer'));
+        req.session.urlReautenticar = req.originalUrl;
+        return res.redirect("/reautenticar");
     }
 }
-/**
- * Aunque exista un middleware para el manejo de errores, si una funcion o metodo externo lanza una excepcion, el middleware sera incapaz de capturarla.
- * Esta funcion evita tener que llenar todas las rutas de bloques try catch o de catch para promesas. 
- * @param func una funcion que tendra por parametros req (de tipo Request) y res (de tipo Response) y devolverá void
- * @returns una funcion ( devuelve void) que capturará todos los errores de la funcion y los pasará al middleware
- */
-function manejadorErrores(func: (req: Request, res: Response) => void): (req: Request, res: Response, next: NextFunction) => void {
-    return (req: Request, res: Response, next: NextFunction): void => {
-        Promise.resolve(func(req, res)).catch(next);
-    };
-}
-/**
- * Aunque exista un middleware para el manejo de errores, si una funcion o metodo externo lanza una excepcion, el middleware sera incapaz de capturarla.
- * Esta funcion evita tener que llenar todas las rutas de bloques try catch o de catch para promesas. 
- * @param func una funcion que tendra por parametros req (de tipo Request) y res (de tipo Response) y devolverá void
- * @returns una funcion ( devuelve void) que capturará todos los errores de la funcion y los pasará al middleware
- */
-function manejadorErroresNext(func: (req: Request, res: Response, next:NextFunction) => void): (req: Request, res: Response, next: NextFunction) => void {
-    return (req: Request, res: Response, next: NextFunction): void => {
-        Promise.resolve(func(req, res, next)).catch(next);
-    };
-}
-
 
 // permisos(req: Request, res: Response, next: NextFunction): void {
 //     if (req.session.usuario?.tipo == Tipos.ADMIN) {
@@ -65,5 +59,5 @@ function manejadorErroresNext(func: (req: Request, res: Response, next:NextFunct
 //         res.redirect("/inicio");
 //     }
 // }
-export { noAutenticado, autenticado, bodyDefinido, manejadorErrores, manejadorErroresNext };
+export { noAutenticado, autenticado, reautenticar };
 
