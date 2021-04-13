@@ -40,16 +40,48 @@ function autenticado(req: Request, res: Response, next: NextFunction): void {
         return res.redirect("/login");
     }
 }
-
+/**
+ * Funcion para comprobar si se ha reautenticado para a la ruta a la que intenta acceder,
+ * en caso de no estar estar reautenticado, redirigira al usuario para que reintroduzca la contraseña, 
+ * si esta reautenticado le permitira pasar a la siguiente funcion de la ruta.
+ * @param req Request
+ * @param res Response
+ * @param next NextFunction
+ * @returns void
+ */
 function reautenticar(req: Request, res: Response, next: NextFunction): void {
-    if (req.session.reautenticado) {
-        req.session.reautenticado = false;
+    let reautenticado: boolean;
+
+    if (req.session.reautenticacion != undefined && req.originalUrl in req.session.reautenticacion) {
+        reautenticado = req.session.reautenticacion[req.originalUrl];
+    } else {
+        reautenticado = false;
+    }
+
+    if (reautenticado) {
         return next();
     } else {
-        console.log(req.header('Referer'));
         req.session.urlReautenticar = req.originalUrl;
         return res.redirect("/reautenticar");
     }
+}
+/**
+ * Al finalizar la accion, para la que se necesitaba la reautenticación, reautenticarFin borrara la propiedad 
+ * asociada a la url
+ * @param req Request
+ * @param res Response
+ * @param next NextFunction
+ * @returns void
+ */
+function reautenticarFin(req: Request, res: Response): void {
+    
+    if (req.session.reautenticacion != undefined) {
+        delete req.session.reautenticacion[req.originalUrl];
+    }
+    
+    const respuesta = req.siguiente ? req.siguiente : "/app/inicio";
+
+    res.redirect(respuesta);
 }
 
 // permisos(req: Request, res: Response, next: NextFunction): void {
@@ -59,5 +91,5 @@ function reautenticar(req: Request, res: Response, next: NextFunction): void {
 //         res.redirect("/inicio");
 //     }
 // }
-export { noAutenticado, autenticado, reautenticar };
+export { noAutenticado, autenticado, reautenticar, reautenticarFin };
 

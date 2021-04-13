@@ -12,10 +12,24 @@ import config from "./config/Config.json";
 
 //Indica que en el modulo express-session se ampliará la interface de SessionData (conocido como Declaration Merging)
 declare module 'express-session' {
+    //SessionData, permite añadir propiedades a la Sesión
     interface SessionData {
+        //El usuario almacena los datos del usuario que ha iniciado Sesion.
         usuario?: Usuario;
+        //La intencion es que fuera un Map, con un string como clave y un booleano como valor
+        //Sin embargo la session solo acepta objetos serializables a JSON
+        reautenticacion?: Record<string, boolean>;
+        //Cuando sea necesario hacer una reautenticación, la ruta, se almacenará en la Sesión 
         urlReautenticar?: string;
-        reautenticado?: boolean;
+    }
+}
+
+declare module 'express'{
+    //Extiende la interfaz Request
+    interface Request{
+        //La propiedad siguiente permitira indicar la ruta a la que redirecionar, en
+        //la función reautenticarFin
+        siguiente?:string;
     }
 }
 

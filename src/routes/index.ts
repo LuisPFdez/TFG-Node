@@ -44,7 +44,7 @@ rutas.get("/reautenticar", autenticado, (req: Request, res: Response): void => {
     if (req.session.urlReautenticar) {
         const datos: RenderInterface = {
             archivo: config.Rutas.reautenticar,
-            titulo: "Reatenticar",
+            titulo: "Reautenticar",
             datos: {
                 usuario: req.session.usuario
             }
@@ -102,7 +102,7 @@ rutas.post("/registro", bodyDefinido, manejadorErrores(async (req: Request, res:
     if (req.body.cancelar != undefined) {
         return res.redirect("/");
     }
-    console.log("Continua ");
+
     const datosO: { usuario: stNull, descripcion: stNull, error: Record<string, stNull> } = {
         usuario: null,
         descripcion: null,
@@ -151,21 +151,27 @@ rutas.post("/registro", bodyDefinido, manejadorErrores(async (req: Request, res:
 }));
 
 rutas.post("/reautenticar", autenticado, bodyDefinido, (req: Request, res: Response): void => {
-    if (req.body.cancelar) {
-        res.redirect(req.originalUrl);
-    }
 
+    if (req.body.cancelar != undefined) {
+        return res.redirect("/app/inicio");
+    }
+    
+    const ruta = req.session.urlReautenticar!;
     const usuario = req.session.usuario;
 
     const passwordE = Usuario.encriptarPassword(usuario!.codUsuario, req.body.password);
     if (usuario?.password == passwordE) {
-        req.session.reautenticado = true;
+
+        req.session.reautenticacion ? req.session.reautenticacion[ruta] = true : req.session.reautenticacion = { [ruta]: true };
+
         const redirecion = req.session.urlReautenticar ? req.session.urlReautenticar : "/app/inicio";
+
         return res.redirect(redirecion);
     } else {
+
         const datos: RenderInterface = {
             archivo: config.Rutas.reautenticar,
-            titulo: "Reatenticar",
+            titulo: "Reautenticar",
             datos: {
                 usuario: req.session.usuario?.descripcion,
                 ePassword: "Contraseña erronea"

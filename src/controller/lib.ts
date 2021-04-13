@@ -28,9 +28,8 @@ function manejadorErrores(func: (req: Request, res: Response) => void): (req: Re
     };
 }
 /**
- * Aunque exista un middleware para el manejo de errores, si una funcion o metodo externo lanza una excepcion, el middleware sera incapaz de capturarla.
- * Esta funcion evita tener que llenar todas las rutas de bloques try catch o de catch para promesas.
- * @param func una funcion que tendra por parametros req (de tipo Request) y res (de tipo Response) y devolverá void
+ * Similar a manejadorErrores, pero permite pasar por parametro la funcion next
+ * @param func una funcion que tendra por parametros req (de tipo Request), res (de tipo Response) y next (de tipo NextFunction)  y devolverá void
  * @returns una funcion ( devuelve void) que capturará todos los errores de la funcion y los pasará al middleware
  */
 function manejadorErroresNext(func: (req: Request, res: Response, next: NextFunction) => void): (req: Request, res: Response, next: NextFunction) => void {

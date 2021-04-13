@@ -1,6 +1,15 @@
 <form action="/app/editar" method="POST">
-    <input type="text" readonly value="<%= usuario.codUsuario %>">
-    <input type="text" value="<%= usuario.descripcion %>">
+    <label>CodUsuario: </label><br>
+    <input type="text" readonly value="<%= usuario.codUsuario %>"><br>
+    <label>Descripcion: </label><br>
+    <input type="text" value="<%= usuario.descripcion %>" name="descripcion"><br>
+    <%if (typeof eDescripcion !='undefined' ){%>
+        <span><%= eDescripcion %></span><br>
+    <%}%>
+    
+    <label>Tipo de Usuario: </label><br>
+    <!--El readonly será parametrizado para reutilizarlo para el admin-->
+    <input type="text" readonly value="<%= usuario.tipo %>"><br>
     <button type="submit" name="editar">Editar</button>
     <button type="submit" name="cancelar">Cancelar</button>
 </form>
