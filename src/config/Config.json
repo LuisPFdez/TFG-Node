@@ -10,6 +10,7 @@
         "registro": "Principal/registro",
         "inicio": "App/inicio",
         "editar": "App/editar",
-        "modificar": "App/modificar"
+        "modificar": "App/modificar",
+        "borrar": "App/borrar"
     }
 }

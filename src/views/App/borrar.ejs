@@ -1,0 +1,22 @@
+<p>¡Atencion esta acción es irreversible!</p>
+<form action="/app/borrar" method="POST">
+    <label>Introduce <span id="codigo">borrar/<%= usuario.codUsuario %></span></label><br>
+    <input type="text" id="iCodigo"><br>
+    <button type="submit" name="borrar" id="bBorrar">Borrar</button>
+    <button type="submit" name="cancelar">Cancelar</button>
+</form>
+
+<script>
+    //El codigo embebido en el html es temporal
+    console.log("Hola");
+    const boton = document.getElementById("bBorrar");
+    console.log(boton);
+    boton.disabled = true;
+    document.getElementById("iCodigo").addEventListener("keyup", function () {
+        const codigo = document.getElementById("codigo");
+        console.log(this.value, codigo.innerHTML);
+        if (codigo.innerHTML == this.value) {
+            boton.disabled = false;
+        }
+    });
+</script>

@@ -125,7 +125,7 @@ rutas.post("/registro", bodyDefinido, manejadorErrores(async (req: Request, res:
     datosO.usuario = req.body.usuario;
     datosO.descripcion = req.body.descripcion;
 
-    datosO.error.usuario = validacionFormuarios.comprobarAlfabetico(req.body.usuario, 20, 3);
+    datosO.error.usuario = validacionFormuarios.validarCodUsuario(req.body.usuario, 20, 3);
     datosO.error.descripcion = validacionFormuarios.comprobarAlfaNumerico(req.body.descripcion, 25, 5);
     datosO.error.password = validacionFormuarios.validarPassword(req.body.password, 20, 4, 2);
     datosO.error.passwordC = req.body.password == req.body.passwordC ? null : "Las contraseñas no coinciden";

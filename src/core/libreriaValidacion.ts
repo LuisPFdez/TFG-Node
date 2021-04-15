@@ -11,8 +11,9 @@
  */
 
 /**
- * El tipo es redefinido para evitar que la libreria sea dependientre del proyecto
+ * Tipo que incida que puede ser un string o null
  */
+//El tipo es redefinido para evitar que la libreria sea dependientre del proyecto
 type stNull = string | null;
 
 
@@ -60,7 +61,9 @@ export default class validacionFormuarios {
         }
 
         mensajeError = this.concatenar(mensajeError, this.comprobarMaxTamanio(cadena, maxTamanio));
-        mensajeError = this.concatenar(mensajeError, this.comprobarMinTamanio(cadena, minTamanio));
+        if (obligatorio || (cadena.length >= 1 && !obligatorio)) {
+            mensajeError = this.concatenar(mensajeError, this.comprobarMinTamanio(cadena, minTamanio));
+        }
         return mensajeError;
 
     }
@@ -74,9 +77,32 @@ export default class validacionFormuarios {
         }
 
         mensajeError = this.concatenar(mensajeError, this.comprobarMaxTamanio(cadena, maxTamanio));
-        mensajeError = this.concatenar(mensajeError, this.comprobarMinTamanio(cadena, minTamanio));
+        if (obligatorio || (cadena.length >= 1 && !obligatorio)) {
+            mensajeError = this.concatenar(mensajeError, this.comprobarMinTamanio(cadena, minTamanio));
+        }
         return mensajeError;
     }
+
+    public static validarCodUsuario(codigo: string, maxTamanio: number = 1000, minTamanio: number = 1, obligatorio: boolean = true): stNull {
+        let mensajeError: stNull = null;
+        const regex = new RegExp("^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\\-\\_]+$");
+        codigo = codigo.trim();
+
+        if (obligatorio) {
+            mensajeError = this.comprobarNoVacio(codigo);
+        }
+
+        if (!regex.test(codigo)) {
+            mensajeError = this.concatenar(mensajeError, "Solo se admiten letras.");
+        }
+
+        mensajeError = this.concatenar(mensajeError, this.comprobarMaxTamanio(codigo, maxTamanio));
+        if (obligatorio || (codigo.length >= 1 && !obligatorio)) {
+            mensajeError = this.concatenar(mensajeError, this.comprobarMinTamanio(codigo, minTamanio));
+        }
+        return mensajeError;
+    }
+
 
     public static validarPassword(passwd: string, maximo: number = 16, minimo: number = 2, tipo: number = 2, obligatorio: boolean = true): stNull {  //CAMBIADO ORDEN DE LOS PARAMETROS, AÑADIDOS PARAMETROS PREDEFINIDOS Y MEJORADA LA RESPUESTA
         let mensajeError: stNull = null;

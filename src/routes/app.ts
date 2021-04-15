@@ -7,6 +7,7 @@ import UsuarioInterface from "../interfaces/UsuarioInterface";
 import validacionFormuarios from "../core/libreriaValidacion";
 import { stNull } from "../controller/types";
 import UsuarioDB from "../model/UsuarioDB";
+import { Usuario } from "../model/Usuario";
 const rutas = Router();
 
 
@@ -47,10 +48,10 @@ rutas.get("/modificar_password", reautenticar, (req: Request, res: Response): vo
 
     return res.render(config.Rutas.layout, datos);
 });
-rutas.get("/borrar", autenticado, (req: Request, res: Response): void => {
+rutas.get("/borrar", reautenticar, (req: Request, res: Response): void => {
     const datos: RenderInterface = {
-        archivo: config.Rutas.editar,
-        titulo: "Editar",
+        archivo: config.Rutas.borrar,
+        titulo: "Borrar Cuenta",
         datos: {
             usuario: req.session.usuario
         }
@@ -69,9 +70,8 @@ rutas.post("/inicio", autenticado, bodyDefinido, (req: Request, res: Response): 
     } else if (req.body.borrar != undefined) {
         return res.redirect("/app/borrar");
     } else if (req.body.cerrar != undefined) {
-        req.session.destroy((): void => {
-            return res.redirect("/");
-        });
+        req.session.destroy((err): void => { if (err) throw new Error("Error al destruir la session"); });
+        return res.redirect("/");
     } else {
         return res.redirect("back");
     }
@@ -129,10 +129,13 @@ rutas.post("/modificar_password", manejadorErroresNext(async (req: Request, res:
     datosO.passwordC = req.body.password == req.body.passwordC ? null : "Las contraseñas no coinciden";
 
     if (datosO.password == null && datosO.passwordC == null) {
-        if (! await UsuarioDB.modificarPassword(req.session.usuario!.codUsuario, req.body.password)) {
+        const usuario = req.session.usuario!;
+
+        if (! await UsuarioDB.modificarPassword(usuario.codUsuario, req.body.password)) {
             throw new Error("Error al modificar al contraseña, el codigo de usuario no existe");
         }
 
+        req.session.usuario!.password = Usuario.encriptarPassword(usuario.codUsuario, req.body.password);
         return next();
     } else {
         const datos: RenderInterface = {
@@ -141,23 +144,25 @@ rutas.post("/modificar_password", manejadorErroresNext(async (req: Request, res:
             datos: datosO
         };
 
-        res.render(config.Rutas.layout, datos);
+        return res.render(config.Rutas.layout, datos);
     }
 
 }), reautenticarFin);
 
-rutas.post("/borrar", autenticado, (req: Request, res: Response): void => {
-    const datos: RenderInterface = {
-        archivo: config.Rutas.editar,
-        titulo: "Editar",
-        datos: {
-            usuario: req.session.usuario
+rutas.post("/borrar", reautenticar, manejadorErroresNext(async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    if (req.body.borrar != undefined) {
+        if (! await UsuarioDB.borrarUsuario(req.session.usuario!.codUsuario)) {
+            throw new Error("Error al modificar al contraseña, el codigo de usuario no existe ");
         }
 
-    };
+        req.session.destroy((err): void => { if (err) throw new Error("Error destruir la sesion del usuario eliminado"); });
+        return res.redirect("/");
 
-    return res.render(config.Rutas.layout, datos);
-});
+    }
+
+    req.siguiente = "app/inicio";
+    return next();
+}), reautenticarFin);
 
 
 export default rutas;
