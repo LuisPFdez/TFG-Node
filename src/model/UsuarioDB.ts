@@ -1,11 +1,12 @@
-import { DocumentData } from "@google-cloud/firestore";
+import { DocumentData, QuerySnapshot } from "@google-cloud/firestore";
 import admin, { ServiceAccount } from 'firebase-admin';
 
 import ErrorDB from "../errors/ErrorDB";
 import { Usuario, Tipos } from "./Usuario";
 import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
 import credenciales from "../config/ConfigDB.json";
-import {stNull, usNull} from "../controller/types";
+import { stNull, usNull } from "../controller/types";
+import UsuarioInterface from "../interfaces/UsuarioInterface";
 admin.initializeApp({
     credential: admin.credential.cert(<ServiceAccount>credenciales)
 });
@@ -57,7 +58,6 @@ export default class UsuarioDB {
 
     static async buscarUsuario(codUsuario: string): Promise<usNull> {
 
-        console.log("Entra en buscar usuario");
         if (! await UsuarioDB.validarCodExiste(codUsuario)) {
             return null;
         }
@@ -80,7 +80,7 @@ export default class UsuarioDB {
 
     }
 
-    static async crearUsuario(codUsuario: string, password: string, descripcion: string, tipo:stNull = null): Promise<usNull> {
+    static async crearUsuario(codUsuario: string, password: string, descripcion: string, tipo: stNull = null): Promise<usNull> {
 
         if (await UsuarioDB.validarCodExiste(codUsuario)) {
             return null;
@@ -93,7 +93,7 @@ export default class UsuarioDB {
 
     }
 
-    static async modificarUSuario(codUsuario: string, descripcion: string, tipo:stNull= null): Promise<boolean> {
+    static async modificarUSuario(codUsuario: string, descripcion: string, tipo: stNull = null): Promise<boolean> {
 
         if (! await UsuarioDB.validarCodExiste(codUsuario)) {
             return false;
@@ -113,7 +113,7 @@ export default class UsuarioDB {
     }
 
     static async modificarPassword(codUsuario: string, password: string,): Promise<boolean> {
-        console.log(password);
+
         if (! await UsuarioDB.validarCodExiste(codUsuario)) {
             return false;
         }
@@ -123,4 +123,18 @@ export default class UsuarioDB {
             .catch((error: Error): never => { throw new ErrorDB(error.message) });
 
     }
+
+    static async listarUsuarios(): Promise<Array<UsuarioInterface>> {
+        return UsuariosDB.get()
+            .then((datos: QuerySnapshot): Array<UsuarioInterface> => {
+                return datos.docs.map((datos: DocumentData): UsuarioInterface => <UsuarioInterface>datos.data());
+            }).catch((error: Error): never => { throw new ErrorDB(error.message) });
+    }
+
+    // static async listarUsuariosFiltro(): Promise<Array<UsuarioInterface>> {
+    //     return UsuariosDB.get()
+    //         .then((datos: QuerySnapshot): Array<UsuarioInterface> => {
+    //             return datos.docs.map((datos: DocumentData): UsuarioInterface => <UsuarioInterface>datos.data());
+    //         }).catch((error: Error): never => { throw new ErrorDB(error.message) });
+    // }
 }

@@ -1,12 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-// import { Tipos } from "../model/Usuario";
+import { Tipos } from "../model/Usuario";
 
-// enum Acciones {
-//     EDITAR = "EDITAR",
-//     BORRAR = "BORRAR",
-//     CREAR = "CREAR",
-//     VER  = "VER", 
-// }
+const acciones: Map<string, Array<string>> = new Map();
+// acciones.set();
 
 /**
  * Funcion que comprueba si el usuario esta autenticado o no, en caso de estar autenticado
@@ -74,22 +70,22 @@ function reautenticar(req: Request, res: Response, next: NextFunction): void {
  * @returns void
  */
 function reautenticarFin(req: Request, res: Response): void {
-    
+
     if (req.session.reautenticacion != undefined) {
         delete req.session.reautenticacion[req.originalUrl];
     }
-    
+
     const respuesta = req.siguiente ? req.siguiente : "/app/inicio";
 
     res.redirect(respuesta);
 }
 
-// permisos(req: Request, res: Response, next: NextFunction): void {
-//     if (req.session.usuario?.tipo == Tipos.ADMIN) {
-//         next();
-//     } else {
-//         res.redirect("/inicio");
-//     }
-// }
+function permisos(req: Request, res: Response, next: NextFunction): void {
+    if(req.session.usuario?.tipo == Tipos.ADMIN) {
+    next();
+} else {
+    res.redirect("/inicio");
+}
+}
 export { noAutenticado, autenticado, reautenticar, reautenticarFin };
 

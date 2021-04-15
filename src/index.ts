@@ -8,6 +8,7 @@ import path from "path";
 import { Usuario } from "./model/Usuario";
 import index from "./routes/index";
 import appRuta from "./routes/app";
+import adminRuta from "./routes/admin";
 import config from "./config/Config.json";
 
 //Indica que en el modulo express-session se ampliará la interface de SessionData (conocido como Declaration Merging)
@@ -24,12 +25,12 @@ declare module 'express-session' {
     }
 }
 
-declare module 'express'{
+declare module 'express' {
     //Extiende la interfaz Request
-    interface Request{
+    interface Request {
         //La propiedad siguiente permitira indicar la ruta a la que redirecionar, en
         //la función reautenticarFin
-        siguiente?:string;
+        siguiente?: string;
     }
 }
 
@@ -60,6 +61,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/app", appRuta);
+app.use("/admin", adminRuta);
 //La ruta index ha de ir la ultima debido a que tiene el middleware para paginas no encontradas.
 app.use(index);
 

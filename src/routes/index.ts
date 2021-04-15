@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response, Router } from "express";
+import { NextFunction, Request, Response, Router, Send } from "express";
 
 import RenderInterface from "../interfaces/RenderInterface";
 import CodigoError from "../errors/CodigoError";
@@ -155,7 +155,7 @@ rutas.post("/reautenticar", autenticado, bodyDefinido, (req: Request, res: Respo
     if (req.body.cancelar != undefined) {
         return res.redirect("/app/inicio");
     }
-    
+
     const ruta = req.session.urlReautenticar!;
     const usuario = req.session.usuario;
 
