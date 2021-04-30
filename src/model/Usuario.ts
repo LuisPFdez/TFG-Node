@@ -4,13 +4,14 @@ import { SHA256 as SHA2 } from "crypto-js";
 import ErrorUsuario from "../errors/ErrorUsuario";
 import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
 import UsuarioInterface from "../interfaces/UsuarioInterface";
+import { stNull } from "../controller/types";
 //Tipos de usuario, estos tipos definiran sus permisos
-export enum Tipos {
-    ADMIN = "ADMIN",
-    SEMI_ADMIN = "SEMI_ADMIN",
-    SUPER_USUARIO = "SUPER_USUARIO",
-    USUARIO = "USUARIO"
-}
+export const Tipos: Record<string, number> = {
+    ADMIN: 4,
+    //SEMI_ADMIN: 3,
+    //SUPER_USUARIO: 2,
+    USUARIO: 1
+};
 
 export class Usuario implements UsuarioInterface {
 
@@ -19,8 +20,8 @@ export class Usuario implements UsuarioInterface {
     descripcion: string;
     tipo: string;
 
-    constructor(codUsuario: string, password: string, descripcion: string, tipo: string | null = "Usuario", encriptar = true) {
-        if (tipo == null) tipo = Tipos.USUARIO;
+    constructor(codUsuario: string, password: string, descripcion: string, tipo: stNull = "USUARIO", encriptar = true) {
+        if (tipo == null) tipo = "USUARIO";
         if (tipo in Tipos) {
             this.codUsuario = codUsuario;
             if (encriptar) this.password = Usuario.encriptarPassword(this.codUsuario, password);

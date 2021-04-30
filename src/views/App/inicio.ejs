@@ -3,5 +3,8 @@
     <button type="submit" name="editar">Editar Perfil</button>
     <button type="submit" name="modificar">Cambiar Contraseña</button>
     <button type="submit" name="borrar">Borrar Perfil</button>
-    <button type="submit" name="cerrar">Cerrar Sesión</button>
+    <button type="submit" name="cerrar">Cerrar Sesión</button><br>
+    <% if ( admin == true ) { %>
+        <button type="submit" name="usuarios">Listado de Usuarios</button>
+    <% } %>
 </form>

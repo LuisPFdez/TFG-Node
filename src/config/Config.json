@@ -1,6 +1,7 @@
 {
     "Puerto": 3000,
     "N_Cert": "clave",
+    "coleccion": "Usuarios",
     "Rutas": {
         "layout": "layout",
         "error": "Error/error",

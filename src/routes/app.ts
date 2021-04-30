@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { autenticado, reautenticar, reautenticarFin } from "../controller/auth";
-import { bodyDefinido, manejadorErroresNext } from "../controller/lib";
+import { autenticado, reautenticar, reautenticarFin, permisosParam } from "../controller/auth";
+import { bodyDefinido, errorHandler, manejadorErroresNext } from "../controller/lib";
 import config from "../config/Config.json";
 import RenderInterface from "../interfaces/RenderInterface";
 import UsuarioInterface from "../interfaces/UsuarioInterface";
@@ -12,12 +12,20 @@ const rutas = Router();
 
 
 rutas.get("/inicio", autenticado, (req: Request, res: Response): void => {
+    let permisos: boolean;
+
+    if (permisosParam(req.session.usuario!, "/admin/usuarios")) {
+        permisos = true;
+    } else {
+        permisos = false;
+    }
 
     const datos: RenderInterface = {
         archivo: config.Rutas.inicio,
         titulo: "Inicio",
         datos: {
-            usuario: req.session.usuario
+            usuario: req.session.usuario,
+            admin: permisos
         }
 
     };
@@ -72,6 +80,8 @@ rutas.post("/inicio", autenticado, bodyDefinido, (req: Request, res: Response): 
     } else if (req.body.cerrar != undefined) {
         req.session.destroy((err): void => { if (err) throw new Error("Error al destruir la session"); });
         return res.redirect("/");
+    } else if (req.body.usuarios != undefined) {
+        return res.redirect("/admin/usuarios");
     } else {
         return res.redirect("back");
     }
@@ -164,5 +174,6 @@ rutas.post("/borrar", reautenticar, manejadorErroresNext(async (req: Request, re
     return next();
 }), reautenticarFin);
 
+rutas.use(errorHandler);
 
 export default rutas;

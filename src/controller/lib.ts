@@ -1,5 +1,62 @@
 import { NextFunction, Request, Response } from "express";
 import ErrorRoute from "../errors/ErrorRoute";
+import CodigoError from "../errors/CodigoError";
+import RenderInterface from "../interfaces/RenderInterface";
+import config from "../config/Config.json";
+
+/**
+ * El error handler recogerá todos los errores lanzados desde las rutas. Permitiendo mostrar un mensaje en
+ * funcion del codigo de error que se lanze
+ * @param err CodigoError, aunque en caso de ser un error no contemplado se le asigna un error 500
+ * @param _req Request
+ * @param res Response
+ * @param _next NextFunction
+ * @returns void
+ * Los middleware para el manejo de errores han de tener obligatoriamente 4 argumentos. El siguente comentario desactiva el warning de esLint
+ */
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function errorHandler(err: CodigoError, _req: Request, res: Response, _next: NextFunction): void {
+    //En caso de que algun error no sea controlado y al lanzarlo no tenga el atributo codigo, como si lo tienen los descendientes de CodigoError,
+    //establecerá el error en 500, en caso contrario el error sera el que se lance con el codigo
+    const codigo: number = err.codigo == undefined ? 500 : err.codigo;
+
+    // console.log("Entra en el error: ", err, "Codigo error", err.codigo);
+    //La interfaz RenderInterface, declara datos como opcional, si se intentase establecer sus valores directamente mostraria un error y eslint no recomienda utilizar el operador de asercion nula, 
+    //al declarar un objeto externo y asiganla a la propiedad, pasa la referencia, vinculando los valores del objeto a la propiedad.
+    const datosO = {
+        titulo: "Error",
+        mensaje: err.name + ": " + err.message
+    };
+
+    const datos: RenderInterface = {
+        archivo: config.Rutas.error,
+        titulo: "Error",
+        datos: datosO
+    };
+
+    switch (codigo) {
+        case 400:
+            datos.titulo = "Error 400";
+            datosO.titulo = "Error 400";
+            break;
+        case 401:
+            datos.titulo = "Error 401";
+            datosO.titulo = "No tienes los permisos necesarios";
+            break;
+        case 404:
+            datos.titulo = "Error 404";
+            datosO.titulo = "Pagina no encontrada";
+            break;
+        case 500:
+            datos.titulo = "Error 500";
+            datosO.titulo = "Error interno del servidor";
+            break;
+
+    }
+    return res.render(config.Rutas.layout, datos);
+}
+
 
 /**
  * Middleware para comprobar si el body este definido, evitando tener que comprobarlo en la ruta
@@ -38,4 +95,4 @@ function manejadorErroresNext(func: (req: Request, res: Response, next: NextFunc
     };
 }
 
-export { bodyDefinido, manejadorErrores, manejadorErroresNext };
+export { errorHandler, bodyDefinido, manejadorErrores, manejadorErroresNext };

@@ -1,10 +1,9 @@
-import { NextFunction, Request, Response, Router, Send } from "express";
+import { Request, Response, Router } from "express";
 
 import RenderInterface from "../interfaces/RenderInterface";
-import CodigoError from "../errors/CodigoError";
 import config from "../config/Config.json";
 import { autenticado, noAutenticado } from "../controller/auth";
-import { bodyDefinido, manejadorErrores } from "../controller/lib";
+import { bodyDefinido, errorHandler, manejadorErrores } from "../controller/lib";
 import UsuarioDB from "../model/UsuarioDB";
 import ErrorRoute from "../errors/ErrorRoute";
 import validacionFormuarios from "../core/libreriaValidacion";
@@ -188,44 +187,8 @@ rutas.use((): void => {
     throw new ErrorRoute("No se ha encontrado la pagina", 404);
 });
 
-//Los middleware para el manejo de errores han de tener obligatoriamente 4 argumentos. El siguente comentario desactiva el warning de esLint
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-rutas.use(function (err: CodigoError, _req: Request, res: Response, _next: NextFunction): void {
-    //En caso de que algun error no sea controlado y al lanzarlo no tenga el atributo codigo, como si lo tienen los descendientes de CodigoError,
-    //establecerá el error en 500, en caso contrario el error sera el que se lance con el codigo
-    const codigo: number = err.codigo == undefined ? 500 : err.codigo;
 
-    console.log("Entra en el error: ", err, "Codigo error", err.codigo);
-    //La interfaz RenderInterface, declara datos como opcional, si se intentase establecer sus valores directamente mostraria un error y eslint no recomienda utilizar el operador de asercion nula, 
-    //al declarar un objeto externo y asiganla a la propiedad, pasa la referencia, vinculando los valores del objeto a la propiedad.
-    const datosO = {
-        titulo: "Error",
-        mensaje: err.name + ": " + err.message
-    };
-
-    const datos: RenderInterface = {
-        archivo: config.Rutas.error,
-        titulo: "Error",
-        datos: datosO
-    };
-
-    switch (codigo) {
-        case 400:
-            datos.titulo = "Error 400";
-            datosO.titulo = "Error 400";
-            break;
-        case 404:
-            datos.titulo = "Error 404";
-            datosO.titulo = "Pagina no encontrada";
-            break;
-        case 500:
-            datos.titulo = "Error 500";
-            datosO.titulo = "Error interno del servidor";
-            break;
-
-    }
-    return res.render(config.Rutas.layout, datos);
-});
+rutas.use(errorHandler);
 
 
 

@@ -1,17 +1,13 @@
-import { NextFunction, Request, Response, Router } from "express";
-import { autenticado, reautenticar, reautenticarFin } from "../controller/auth";
-import { bodyDefinido, manejadorErrores, manejadorErroresNext } from "../controller/lib";
+import { Request, Response, Router } from "express";
+import { autenticado, permisos } from "../controller/auth";
+import { errorHandler, manejadorErrores } from "../controller/lib";
 import config from "../config/Config.json";
 import RenderInterface from "../interfaces/RenderInterface";
-import UsuarioInterface from "../interfaces/UsuarioInterface";
-import validacionFormuarios from "../core/libreriaValidacion";
-import { stNull } from "../controller/types";
 import UsuarioDB from "../model/UsuarioDB";
-import { Usuario } from "../model/Usuario";
 
 const rutas = Router();
 
-rutas.get("/usuarios", manejadorErrores(async (req: Request, res: Response): Promise<void> => {
+rutas.get("/usuarios", autenticado, permisos, manejadorErrores(async (req: Request, res: Response): Promise<void> => {
     const datos: RenderInterface = {
         titulo: "Listado de Usuarios",
         archivo: config.Rutas.usuarios,
@@ -22,5 +18,10 @@ rutas.get("/usuarios", manejadorErrores(async (req: Request, res: Response): Pro
     return res.render(config.Rutas.layout, datos);
 }));
 
+// rutas.get("/usuarios/:usuario", autenticado, manejadorErrores(async (req: Request, res: Response): Promise<void> => {
+//     //Foo
+// }));
+
+rutas.use(errorHandler);
 
 export default rutas;

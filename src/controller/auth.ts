@@ -1,7 +1,13 @@
 import { NextFunction, Request, Response } from "express";
-import { Tipos } from "../model/Usuario";
+import ErrorRoute from "../errors/ErrorRoute";
+import { Tipos, Usuario } from "../model/Usuario";
 
-const acciones: Map<string, Array<string>> = new Map();
+const acciones: Map<string, Array<number>> = new Map(
+    [
+        //["/admin/usuarios", [Tipos.ADMIN, Tipos.SEMI_ADMIN, Tipos.SUPER_USUARIO]],
+        ["/admin/usuarios", [Tipos.ADMIN]]
+    ]
+);
 // acciones.set();
 
 /**
@@ -79,13 +85,43 @@ function reautenticarFin(req: Request, res: Response): void {
 
     res.redirect(respuesta);
 }
-
+/**
+ * Funcion que comprueba permisos de un usario en funcion de la ruta.
+ * En funcion de los permisos que tenga permitira pasar al siguente middleware, o, lanzará un error
+ * @param req Request
+ * @param res Response
+ * @param next NextFunction
+ * @returns void
+ */
 function permisos(req: Request, res: Response, next: NextFunction): void {
-    if(req.session.usuario?.tipo == Tipos.ADMIN) {
-    next();
-} else {
-    res.redirect("/inicio");
+    const usuario = Tipos[req.session.usuario!.tipo];
+
+    console.log("Parametros", req.params);
+    console.log(req.baseUrl, req.path);
+    console.log(req.originalUrl, " URL:", req.baseUrl);
+    if (acciones.get(req.originalUrl)?.includes(usuario)) {
+        return next();
+    } else {
+        return next(new ErrorRoute("No tienes los permisos necesarios", 401));
+    }
 }
+
+/**
+ * Funcion similar a permisos, sin embargo, el permiso lo obtiene por parametro.
+ * @param usuario usuario del que se van a comprobar los permisos
+ * @param ruta permiso que se tiene que comprobar
+ * @returns boolean, si el usuario tiene permiso o no
+ */
+function permisosParam(usuario: Usuario, ruta: string): boolean {
+
+    const tipoUsuario = Tipos[usuario!.tipo];
+    if (acciones.get(ruta)?.includes(tipoUsuario)) {
+        return true;
+    } else {
+        return false;
+    }
+
 }
-export { noAutenticado, autenticado, reautenticar, reautenticarFin };
+
+export { noAutenticado, autenticado, reautenticar, reautenticarFin, permisos, permisosParam };
 

@@ -5,13 +5,14 @@ import ErrorDB from "../errors/ErrorDB";
 import { Usuario, Tipos } from "./Usuario";
 import ObjetoUsuarioInterface from "../interfaces/ObjetoUsuarioInterface";
 import credenciales from "../config/ConfigDB.json";
+import config from "../config/Config.json";
 import { stNull, usNull } from "../controller/types";
 import UsuarioInterface from "../interfaces/UsuarioInterface";
 admin.initializeApp({
     credential: admin.credential.cert(<ServiceAccount>credenciales)
 });
 
-const UsuariosDB = (admin.firestore()).collection("Usuarios");
+const UsuariosDB = (admin.firestore()).collection(config.coleccion);
 
 
 export default class UsuarioDB {
