@@ -34,11 +34,10 @@ function errorHandler(err: CodigoError, _req: Request, res: Response, _next: Nex
         datos: datosO
     };
 
+    /**
+     * En funcion del codigo cambiara los titulos
+     */
     switch (codigo) {
-        case 400:
-            datos.titulo = "Error 400";
-            datosO.titulo = "Error 400";
-            break;
         case 401:
             datos.titulo = "Error 401";
             datosO.titulo = "No tienes los permisos necesarios";
@@ -53,6 +52,7 @@ function errorHandler(err: CodigoError, _req: Request, res: Response, _next: Nex
             break;
 
     }
+    
     return res.render(config.Rutas.layout, datos);
 }
 

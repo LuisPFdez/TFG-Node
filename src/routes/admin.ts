@@ -4,7 +4,6 @@ import { bodyDefinido, errorHandler, manejadorErrores } from "../controller/lib"
 import config from "../config/Config.json";
 import RenderInterface from "../interfaces/RenderInterface";
 import UsuarioDB from "../model/UsuarioDB";
-import { Usuario } from "../model/Usuario";
 
 const rutas = Router();
 

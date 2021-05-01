@@ -2,13 +2,14 @@ import { NextFunction, Request, Response } from "express";
 import ErrorRoute from "../errors/ErrorRoute";
 import { Tipos, Usuario } from "../model/Usuario";
 
+//Map de acciones que permite asignar una accion a varios usuarios, la llave seria la accion (a veces pude ser la ruta)
+//El valor. es un array que contiene los numeros ascociados a los usuarios, todo usuario que este en el array, tendra los permisos
 const acciones: Map<string, Array<number>> = new Map(
     [
         //["/admin/usuarios", [Tipos.ADMIN, Tipos.SEMI_ADMIN, Tipos.SUPER_USUARIO]],
         ["/admin/usuarios", [Tipos.ADMIN]]
     ]
 );
-// acciones.set();
 
 /**
  * Funcion que comprueba si el usuario esta autenticado o no, en caso de estar autenticado
@@ -27,6 +28,7 @@ function noAutenticado(req: Request, res: Response, next: NextFunction): void {
     }
 
 }
+
 /**
  * Funcion que comprueba si el usuario esta autenticado o no, en caso de no estar autenticado 
  * redirigira al usuario al login, en caso contrario, pasará al siguiente middleware
@@ -42,6 +44,7 @@ function autenticado(req: Request, res: Response, next: NextFunction): void {
         return res.redirect("/login");
     }
 }
+
 /**
  * Funcion para comprobar si se ha reautenticado para a la ruta a la que intenta acceder,
  * en caso de no estar estar reautenticado, redirigira al usuario para que reintroduzca la contraseña, 
@@ -52,9 +55,12 @@ function autenticado(req: Request, res: Response, next: NextFunction): void {
  * @returns void
  */
 function reautenticar(req: Request, res: Response, next: NextFunction): void {
+    //Variable booleana que indica si el usuario se ha reautenticado o no
     let reautenticado: boolean;
-
+    
+    //Comprueba si la propiedad reautenticacion de la sesion esta inicializada y si contine la url
     if (req.session.reautenticacion != undefined && req.originalUrl in req.session.reautenticacion) {
+        //Almacena en reautenticado el valor asociada a la url, en reautenticacion
         reautenticado = req.session.reautenticacion[req.originalUrl];
     } else {
         reautenticado = false;
@@ -63,10 +69,12 @@ function reautenticar(req: Request, res: Response, next: NextFunction): void {
     if (reautenticado) {
         return next();
     } else {
+        //Almacena la url en la sesion y redirige a reautenticar
         req.session.urlReautenticar = req.originalUrl;
         return res.redirect("/reautenticar");
     }
 }
+
 /**
  * Al finalizar la accion, para la que se necesitaba la reautenticación, reautenticarFin borrara la propiedad 
  * asociada a la url
@@ -78,13 +86,16 @@ function reautenticar(req: Request, res: Response, next: NextFunction): void {
 function reautenticarFin(req: Request, res: Response): void {
 
     if (req.session.reautenticacion != undefined) {
+        //Elimina la ruta de la sesion
         delete req.session.reautenticacion[req.originalUrl];
     }
 
+    //Si siguiente lo almacena en repuesta sino almacena "/app/inicio"
     const respuesta = req.siguiente ? req.siguiente : "/app/inicio";
 
-    res.redirect(respuesta);
+    return res.redirect(respuesta);
 }
+
 /**
  * Funcion que comprueba permisos de un usario en funcion de la ruta.
  * En funcion de los permisos que tenga permitira pasar al siguente middleware, o, lanzará un error
@@ -94,11 +105,16 @@ function reautenticarFin(req: Request, res: Response): void {
  * @returns void
  */
 function permisos(req: Request, res: Response, next: NextFunction): void {
+    //Obtine el numero asociado al usuario a traves de la sesion
     const usuario = Tipos[req.session.usuario!.tipo];
 
+    //Se usa la url como llave y comprueba si el usuario esta en ella
+    //Si no hay ninguna llave asociada a la url o el usuario no esta en el array, pasara al else
     if (acciones.get(req.originalUrl)?.includes(usuario)) {
+        //Pasa al siguente middleware
         return next();
     } else {
+        //Lanza un error
         return next(new ErrorRoute("No tienes los permisos necesarios", 401));
     }
 }
@@ -110,8 +126,8 @@ function permisos(req: Request, res: Response, next: NextFunction): void {
  * @returns boolean, si el usuario tiene permiso o no
  */
 function permisosParam(usuario: Usuario, ruta: string): boolean {
+    const tipoUsuario = Tipos[usuario.tipo];
 
-    const tipoUsuario = Tipos[usuario!.tipo];
     if (acciones.get(ruta)?.includes(tipoUsuario)) {
         return true;
     } else {
@@ -120,5 +136,6 @@ function permisosParam(usuario: Usuario, ruta: string): boolean {
 
 }
 
+//Se exportan las funciones
 export { noAutenticado, autenticado, reautenticar, reautenticarFin, permisos, permisosParam };
 
