@@ -183,8 +183,8 @@ rutas.post("/reautenticar", autenticado, bodyDefinido, (req: Request, res: Respo
 //Middlewares
 
 //Este middleware necesitar ir despues de todas las rutas para que en caso de que ninguna coincida mande un error 404
-rutas.use((): void => {
-    throw new ErrorRoute("No se ha encontrado la pagina", 404);
+rutas.use((req: Request): void => {
+    throw new ErrorRoute("No se ha encontrado la pagina: " + req.originalUrl, 404);
 });
 
 

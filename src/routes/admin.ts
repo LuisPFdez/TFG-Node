@@ -1,9 +1,10 @@
 import { Request, Response, Router } from "express";
 import { autenticado, permisos } from "../controller/auth";
-import { errorHandler, manejadorErrores } from "../controller/lib";
+import { bodyDefinido, errorHandler, manejadorErrores } from "../controller/lib";
 import config from "../config/Config.json";
 import RenderInterface from "../interfaces/RenderInterface";
 import UsuarioDB from "../model/UsuarioDB";
+import { Usuario } from "../model/Usuario";
 
 const rutas = Router();
 
@@ -18,9 +19,38 @@ rutas.get("/usuarios", autenticado, permisos, manejadorErrores(async (req: Reque
     return res.render(config.Rutas.layout, datos);
 }));
 
-// rutas.get("/usuarios/:usuario", autenticado, manejadorErrores(async (req: Request, res: Response): Promise<void> => {
-//     //Foo
-// }));
+rutas.get("/usuarios/:usuario", autenticado, manejadorErrores(async (req: Request, res: Response): Promise<void> => {
+    const codigo = req.params.usuario;
+    const usuario = await UsuarioDB.buscarUsuario(codigo);
+    if (usuario == null) {
+        const datos: RenderInterface = {
+            titulo: "Usuario inexistente",
+            archivo: config.Rutas.usuario,
+            datos: {
+                existe: false,
+                codigo: codigo
+            }
+        };
+
+        return res.render(config.Rutas.layout, datos);
+    }
+
+    const datos: RenderInterface = {
+        titulo: "Usuario: " + usuario.descripcion,
+        archivo: config.Rutas.usuario,
+        datos: {
+            existe: true,
+            usuario: usuario
+        }
+    };
+
+    return res.render(config.Rutas.layout, datos);
+
+}));
+
+rutas.post("/usuarios", autenticado, bodyDefinido, (req: Request, res: Response): void => {
+    return res.redirect("/admin/usuarios");
+});
 
 rutas.use(errorHandler);
 

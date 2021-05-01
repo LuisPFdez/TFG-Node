@@ -96,9 +96,6 @@ function reautenticarFin(req: Request, res: Response): void {
 function permisos(req: Request, res: Response, next: NextFunction): void {
     const usuario = Tipos[req.session.usuario!.tipo];
 
-    console.log("Parametros", req.params);
-    console.log(req.baseUrl, req.path);
-    console.log(req.originalUrl, " URL:", req.baseUrl);
     if (acciones.get(req.originalUrl)?.includes(usuario)) {
         return next();
     } else {

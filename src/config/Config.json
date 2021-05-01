@@ -13,6 +13,7 @@
         "editar": "App/editar",
         "modificar": "App/modificar",
         "borrar": "App/borrar",
-        "usuarios": "Admin/usuarios"
+        "usuarios": "Admin/usuarios",
+        "usuario": "Admin/usuario"
     }
 }

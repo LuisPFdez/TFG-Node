@@ -21,7 +21,6 @@ function errorHandler(err: CodigoError, _req: Request, res: Response, _next: Nex
     //establecerá el error en 500, en caso contrario el error sera el que se lance con el codigo
     const codigo: number = err.codigo == undefined ? 500 : err.codigo;
 
-    // console.log("Entra en el error: ", err, "Codigo error", err.codigo);
     //La interfaz RenderInterface, declara datos como opcional, si se intentase establecer sus valores directamente mostraria un error y eslint no recomienda utilizar el operador de asercion nula, 
     //al declarar un objeto externo y asiganla a la propiedad, pasa la referencia, vinculando los valores del objeto a la propiedad.
     const datosO = {

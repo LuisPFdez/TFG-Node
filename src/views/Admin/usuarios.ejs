@@ -1,9 +1,7 @@
-<table>
-    <% usuarios.forEach( (usuario) => { %>
-        <tr>
-            <td><%= usuario.codUsuario %></td>
-            <td><%= usuario.descripcion %></td>
-            <td><%= usuario.tipo %></td>
-        </tr>
-    <% })%>
-</table>
+<% usuarios.forEach( (usuario) => { %>
+    <section onclick="redirigir('/admin/usuarios/<%= usuario.codUsuario %>')">
+        <article><%= usuario.codUsuario %></article>
+        <article><%= usuario.descripcion %></article>
+        <article><%= usuario.tipo %></article>
+    </section>
+<% })%>
