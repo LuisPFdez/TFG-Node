@@ -30,7 +30,8 @@
     "start": "node ./dist",
     "dev": "npm run lint && npm run build && node ./dist",
     "build": "npm run lint && tsc && copyfiles -u 1 src/**/* -e '**/*.ts' dist/",
-    "lint": "eslint --ext .ts src/ --no-error-on-unmatched-pattern"
+    "lint": "eslint --ext .ts src/ --no-error-on-unmatched-pattern",
+    "dbInit": "node ./dist/scripts/baseDatos"
   },
   "repository": {
     "type": "git",
