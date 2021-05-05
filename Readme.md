@@ -157,11 +157,11 @@ Archivo de configuración que especifica:
     * **Rutas**: objeto con las rutas relativas de las vistas, siendo [views](./src/views) el directorio padre, son necesarias para el renderizado 
 
 * Archivos para el certificado SSL
-Archivos opcionales para HTTPS, sus extensiones han de ser **.key** para la clave privada y **.crt** para el certificado firmado. 
+Archivos opcionales para HTTPS, sus extensiones han de ser **.key** para la clave privada y **.crt** para el certificado firmado. Los nombres han de coincidir con N_Cert de Config.json.
 
-Sus nombres han de coincidir con N_Cert de Config.json.
+La aplicación por esta programada para crear un servido HTTPS. 
 
-La aplicación por esta programada para crear un servido HTTPS, para crear un servidor HTTP es necesario modificar el [index.ts](./src/index.ts)
+Para crear un servidor HTTP es necesario modificar el [index.ts](./src/index.ts)
 
 **Comentar o eliminar**
 ```ts
@@ -219,7 +219,7 @@ Cmpila la aplicación (usa el script build) y la ejecuta con nodemon
 Compila el código de TypeScript a JavaScript y copia los demas archivos a la carpeta de salida. Compuesto por los scripts lint y css
 
 * **lint** -- `npm run lint`
-Comprueba la sintaxis de TypeScript y JavaScript. Puede lanzar errores o advertencias. Los errores detentran el script, por ejemplo, impedirá la compilación del código
+Comprueba la sintaxis de TypeScript y JavaScript. Puede lanzar errores o advertencias. Los errores detendrán el script.
 
 * **css** -- `npm run css`
 A través de postcss transforma el contenido de tailwind.config.js y public/estilo.css en css puro. Incluyendo el css base de tailwindcss
@@ -236,7 +236,7 @@ El código fuente se compone de 2 carpetas. A las que hay que añadir otra neces
 * **node_modules**, carpeta donde se encuentra el código de las dependencias, se genera de forma automática. 
 * **src**, carpeta que contiene el código fuente
     * **config**, archivos de configuración como la clave privada, certificado SSL o archivo JSON de configuración
-    * **controller**, contiene los módulos con las funciones necesarias para que la aplicación funcione. Como funciones para la autenticación o middlewares. Tambien contiene un fichero de tipos
+    * **controller**, contiene los módulos con las funciones necesarias para que la aplicación funcione. Como funciones para la autenticación o middlewares. También contiene un fichero de tipos
     * **core**, conjunto de archivos, independientes de la aplicación, pero necesarios para el funcionamiento de esta.
     * **errors**, carpeta donde se almacenan las excepciones.
     * **model**, clases que proporcionan una estructura para la manipulación de los datos. 
@@ -248,12 +248,12 @@ El código fuente se compone de 2 carpetas. A las que hay que añadir otra neces
 
 
 **Esquema de la estructura de forma mas detallada**
-<!--Imagen insertada con codigo HTML para especificar la altura-->
+<!--Imagen insertada con código HTML para especificar la altura-->
 <img src="./docs/images/EA.png" height="450">
 
 
 ### Acceso a la aplicación
-El acceso a la aplicacion es a través de un **navegador web**. Depende de tres factores:
+El acceso a la aplicación es a través de un **navegador web**. Depende de tres factores:
 1. El protocolo utilizado
 Que puede ser **HTTPS** o **HTTP**
 2. La ruta
@@ -262,11 +262,11 @@ En caso de que la aplicación se ejecute en el mismo equipo desde el que se acce
 3. El puerto
 Por defecto si no es especificado los navegadores acceden al puerto **80**
 
-La ruta se compondria por 
+La ruta se compondría por 
 ```
 protocolo://nombre-o-IP:Puerto
 ```
-Por ejemplo la ruta por defecto de la aplicacion seria 
+Por ejemplo la ruta por defecto de la aplicación sería 
 ```
 https://localhost:3000
 ```
@@ -282,7 +282,7 @@ El IDE usado para el desarrollo de la aplicación ha sido [visual studio code](h
 
 ### Depuración del código
 
-La forma mas comoda y facil de depurar es mediante `console.log()`, el cual permite mostrar mensajes y valores de variables en la consola en la que se ejecuta la aplicación. 
+La forma mas cómoda y fácil de depurar es mediante `console.log()`, el cual permite mostrar mensajes y valores de variables en la consola en la que se ejecuta la aplicación. 
 
-Tambien es posible ejecutar la aplicación en **modo debug**. Permitiendo hacer puntos de ruptura e inspeccionar el valor de las variables. Hay varias formas dependiendo del editor. 
+También es posible ejecutar la aplicación en **modo debug**. Permitiendo hacer puntos de ruptura e inspeccionar el valor de las variables. Hay varias formas dependiendo del editor. 
 Estas pueden verse la [documentación oficial](https://nodejs.org/en/docs/guides/debugging-getting-started/) 
