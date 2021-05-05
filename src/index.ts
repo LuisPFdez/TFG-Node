@@ -1,3 +1,7 @@
+/**
+ * @file archivo principal. 
+ * @author Luis Puente Fernández
+ */
 import express, { Express } from 'express';
 import cookie_parser from "cookie-parser";
 import session from "express-session";
@@ -36,7 +40,7 @@ declare module 'express' {
 
 const app: Express = express();
 
-//Credenciales para el HTTPS
+//Credenciales para HTTPS
 const credenciales = {
     key: readFileSync(path.join(__dirname, "./config/" + config.N_Cert + ".key")),
     cert: readFileSync(path.join(__dirname, "./config/" + config.N_Cert + ".crt"))
@@ -71,3 +75,6 @@ app.use(index);
 
 //Usa el modulo https, le pasa como parametros las credenciales y la app express
 https.createServer(credenciales, app).listen(config.Puerto);
+
+//Codigo para ejecutar el servidor sin http
+//app.listen(config.Puerto);

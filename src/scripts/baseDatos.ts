@@ -14,8 +14,10 @@ admin.initializeApp({
     credential: admin.credential.cert(<ServiceAccount>credenciales)
 });
 
-const UsuariosDB = (admin.firestore()).collection(config.coleccion);
+const UsuariosDB = (admin.firestore()).collection(config.Coleccion);
 
+//Este array contiene los usuarios que van a ser cargados en la base de datos.
+//No es necesario, poner la contraseña encriptada, el script lo hace de forma automatica
 //Es necesario que los codigos del usuario no tengan espacios, para evitar problemas con la aplicacion.
 const DatosUsuarios: Array<ObjetoUsuarioInterface> = [
     {

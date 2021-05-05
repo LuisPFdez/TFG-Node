@@ -1,3 +1,7 @@
+/**
+ * @file Metodos de ruta para la url de admin
+ * @author Luis Puente Fernández
+ */
 import { Request, Response, Router } from "express";
 import { autenticado, permisos } from "../controller/auth";
 import { bodyDefinido, errorHandler, manejadorErrores } from "../controller/lib";
@@ -48,7 +52,11 @@ rutas.get("/usuarios/:usuario", autenticado, manejadorErrores(async (req: Reques
 }));
 
 rutas.post("/usuarios", autenticado, bodyDefinido, (req: Request, res: Response): void => {
-    return res.redirect("/admin/usuarios");
+    if (req.body.volverU != undefined){
+        return res.redirect("/app/inicio");
+    } else if (req.body.volverUS != undefined){
+        return res.redirect("/admin/usuarios");
+    }
 });
 
 rutas.use(errorHandler);

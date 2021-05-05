@@ -1,3 +1,8 @@
+/**
+ * @file Contiene middlewares y funciones necesarias para el
+ * funcionamiento de la aplicacion
+ * @author Luis Puente Fernández
+ */
 import { NextFunction, Request, Response } from "express";
 import ErrorRoute from "../errors/ErrorRoute";
 import CodigoError from "../errors/CodigoError";

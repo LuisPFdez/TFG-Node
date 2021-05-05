@@ -1,3 +1,7 @@
+/**
+ * @file Contiene la clase UsuarioDB, que permite trabajar con la base de datos 
+ * @author Luis Puente Fernández
+ */
 import { DocumentData, QuerySnapshot } from "@google-cloud/firestore";
 import admin, { ServiceAccount } from 'firebase-admin';
 
@@ -12,9 +16,12 @@ admin.initializeApp({
     credential: admin.credential.cert(<ServiceAccount>credenciales)
 });
 
-const UsuariosDB = (admin.firestore()).collection(config.coleccion);
+const UsuariosDB = (admin.firestore()).collection(config.Coleccion);
 
-
+/**
+ * Clase que permite trabajar con la base de datos, con metodos estaticos que permiten 
+ * realizar ciertas acciones sobre esta
+ */
 export default class UsuarioDB {
 
     /**

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
-<!-- Pagina principal que contiene la cabecera y el pie de pagina -->
+<!-- Vista principal que contiene la cabecera y el pie de página -->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
-    <link rel="stylesheet" href="/estilo.css">
     <title>TFG-Node</title>
 </head>
 
 <body>
     <header>
-        <h2>TFG-Node</h2>
+        <h2 class="font-nunito">TFG-Node</h2>
         <h3>
             <!-- El título se pasará por variable, cambiando según la página en la que se encuentre -->
             <%= titulo %>
@@ -22,10 +21,10 @@
     </header>
     <main>
         <!-- 
-            No todas las paginas necesitan ser incluidas con pasandole parametros.
+            No todas las Vistas necesitan ser incluidas con pasandole parametros.
             En caso de estar definido, se incluiran con datos. El include necesita de una variable para saber que incluir
         -->
-        <% if( typeof datos != 'undefined' ) { %>
+        <% if( typeof datos !='undefined' ) { %>
             <%- include(archivo, datos)%>
         <% } else { %>
             <%- include(archivo)%>

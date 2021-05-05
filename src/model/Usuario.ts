@@ -1,3 +1,8 @@
+/**
+ * @file Contiene la clase Usuario, que define la estructura y comportamiento de los Usuarios.
+ * Y el objeto tipos, que especifica los tipos de los usuarios
+ * @author Luis Puente Fernández
+ */
 import { SHA256 as SHA2 } from "crypto-js";
 
 import ErrorUsuario from "../errors/ErrorUsuario";

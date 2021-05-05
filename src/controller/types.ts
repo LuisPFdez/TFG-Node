@@ -1,4 +1,7 @@
-
+/**
+ * @file Fichero de tipos
+ * @author Luis Puente Fernández
+ */
 import { Usuario } from "../model/Usuario";
 
 /**

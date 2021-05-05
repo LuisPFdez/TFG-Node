@@ -29,7 +29,8 @@
   },
   "scripts": {
     "start": "node ./dist",
-    "dev": "npm run lint && npm run build && node ./dist",
+    "dev": "nodemon ./dist",
+    "devBuild": "npm run build && nodemon ./dist",
     "build": "npm run lint && tsc && npm run css && copyfiles -u 1 src/**/* -e '**/*.ts' -e 'src/public/estilo.css' dist/",
     "lint": "eslint --ext .ts src/ --no-error-on-unmatched-pattern",
     "css": "postcss src/public/estilo.css -o dist/public/estilo.css",

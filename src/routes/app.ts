@@ -1,3 +1,7 @@
+/**
+ * @file Metodos de ruta para la url de app
+ * @author Luis Puente Fernández
+ */
 import { NextFunction, Request, Response, Router } from "express";
 import { autenticado, reautenticar, reautenticarFin, permisosParam } from "../controller/auth";
 import { bodyDefinido, errorHandler, manejadorErroresNext } from "../controller/lib";

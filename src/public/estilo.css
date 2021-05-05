@@ -1,3 +1,8 @@
+/**
+ * Archivo css que implementa y permite definir propiedades de tailwincss
+ * Ha de ser compilado para ser usado
+ * El archivo es comun para todas las paginas
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

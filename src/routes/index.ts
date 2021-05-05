@@ -1,3 +1,7 @@
+/**
+ * @file Metodos de ruta para la url principal
+ * @author Luis Puente Fernández
+ */
 import { Request, Response, Router } from "express";
 
 import RenderInterface from "../interfaces/RenderInterface";

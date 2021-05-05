@@ -1,7 +1,11 @@
+<!-- Vista para mostrar un listado de los usuarios. Recibe un array que contiene los usuarios-->
 <% usuarios.forEach( (usuario) => { %>
     <section onclick="redirigir('/admin/usuarios/<%= usuario.codUsuario %>')">
         <article><%= usuario.codUsuario %></article>
         <article><%= usuario.descripcion %></article>
         <article><%= usuario.tipo %></article>
     </section>
-<% })%>
+<% })%><br>
+<form action="/admin/usuarios" method="POST">
+    <button type="submit" name="volverU">Volver</button>
+</form>

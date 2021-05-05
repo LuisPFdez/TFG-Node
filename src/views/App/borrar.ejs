@@ -1,3 +1,4 @@
+<!-- Vista para borrar usuarios -->
 <p>¡Atencion esta acción es irreversible!</p>
 <form action="/app/borrar" method="POST">
     <label>Introduce <span id="codigo">borrar/<%= usuario.codUsuario %></span></label><br>
@@ -8,9 +9,7 @@
 
 <script>
     //El codigo embebido en el html es temporal
-    console.log("Hola");
     const boton = document.getElementById("bBorrar");
-    console.log(boton);
     boton.disabled = true;
     document.getElementById("iCodigo").addEventListener("keyup", function () {
         const codigo = document.getElementById("codigo");

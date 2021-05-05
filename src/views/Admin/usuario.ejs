@@ -1,9 +1,13 @@
+<!-- 
+    Página para mostrar un usuario. 
+    Permite mostrar un mensaje indicando que el usuario no existe.
+ -->
 <% if ( existe ) { %>
 <form action="/admin/usuarios" method="post">
     <input type="text" name="codigo" readonly id="" value="<%= usuario.codUsuario %>"> <br>
     <input type="text" name="descripcion" readonly id="" value="<%= usuario.descripcion %>"><br>
     <input type="text" name="tipo" readonly id="" value="<%= usuario.tipo %>"><br>
-    <button type="submit" name="volver">Volver</button>
+    <button type="submit" name="volverUS">Volver</button>
 </form>
 <% } else { %>
     <p>El usuario, <%= codigo %>, no existe </p>

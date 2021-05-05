@@ -1,3 +1,7 @@
+/**
+ * @file Contiene middlewares para la autenticacion
+ * @author Luis Puente Fernández
+ */
 import { NextFunction, Request, Response } from "express";
 import ErrorRoute from "../errors/ErrorRoute";
 import { Tipos, Usuario } from "../model/Usuario";
