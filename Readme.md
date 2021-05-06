@@ -1,13 +1,14 @@
 # TFG Node
+
 Trabajo de fin de grado con Node.js, Firebase y TailwindCSS
+
+<img height="300" src="./docs/images/Logo.png">
 
 ----
 
 ## Índice
 
 **Haz click sobre algún apartado para moverte a el**
-
-
 
 * [**Autenticación de usuarios con Node.js y Firebase**](#autenticación-de-usuarios-con-nodejs-y-firebase)
     * [**Descripción**](#descripción)
@@ -30,10 +31,13 @@ Trabajo de fin de grado con Node.js, Firebase y TailwindCSS
     * [**Acceso a la aplicación**](#acceso-a-la-aplicación)
     * [**Entornos de ejecución**](#entornos-de-ejecución)
     * [**Depuración del código**](#depuración-del-código)
+
 ----
+
 ## Autenticación de usuarios con Node.js y Firebase
 
 ### Descripción
+
 Proyecto desarrollado como trabajo de fin de grado para el ciclo formativo DAW
 
 ### Tecnologias Usadas
@@ -51,6 +55,7 @@ Proyecto desarrollado como trabajo de fin de grado para el ciclo formativo DAW
 **Pincha sobre una dependencia para ir la pagina de NPM de esta**
 
 #### Dependecias Normales
+
 * [**Express**](https://www.npmjs.com/package/express)
 * [**EJS**](http://npmjs.com/package/ejs)
 * [**Crypto-js**](https://www.npmjs.com/package/crypto-js), permite usar funciones HASH para encriptar datos.
@@ -90,6 +95,7 @@ Son todas páginas de la documentación oficial, debido a la gran cantidad de pa
 Proyecto distribuido bajo lincencia MIT. Mas información en la [licencia](./LICENSE)
 
 ----
+
 ## Instalación y configuración necesaria
 
 ### Requistos
@@ -130,7 +136,9 @@ Una vez compilado, puedes ejecutarlo con `npm start` o `node dist/index.js`
 
 
 **Para acceder a la [aplicación](#acceso-a-la-aplicación)**
+
 ### Configuración de Firestore
+
 [Configuración básica de Firebase](./docs/Configuracion_Firebase.pdf)
 
 Las reglas de la base de la base de datos no influyen en el proyecto, debido a que este necesita de la clave privada para funcionar. 
@@ -139,7 +147,7 @@ Sin embargo, la base de datos contrendrá información sensible, como son las co
 
 La siguente configuración solo permite el acceso por clave privada.
 
-![Imagen reglas](./docs/images/Firestore.png)
+![Imagen reglas](./docs/images/Firestore.PNG)
 
 En caso de necesitar hacer una caga inicial en la base de datos es recomendable usar el [script](./src/scripts/baseDatos.ts) proporcinado.
 
@@ -180,6 +188,7 @@ app.listen(config.Puerto);
 ```
 
 ### Archivos de configuración
+
 * [.eslintignore](./.eslintignore)
 Archivo que le indica a ESLint que ficheros o directorios ignorar
 
@@ -202,6 +211,7 @@ Archivo de configuración para tailwindcss
 Archivo de configuración para el compilador de typescript, le indica la carpeta de salida, el directorio del código fuente, las librerías necesarias para la compilación...
 
 ### Scripts de desarrollo y ejecución
+
 NPM, a travás del archivo package.json, permite el uso de scripts para tareas repetitivas. Salvo ciertos scripts predefinidos como **npm start**, la mayoria de ellos se ejecutan como **npm run** seguido de su nombre.
 
 **Algunos script se componen de otros para aprovechar sus funciones**
@@ -249,10 +259,11 @@ El código fuente se compone de 2 carpetas. A las que hay que añadir otra neces
 
 **Esquema de la estructura de forma mas detallada**
 <!--Imagen insertada con código HTML para especificar la altura-->
-<img src="./docs/images/EA.png" height="450">
+<img src="./docs/images/EA.PNG" height="450">
 
 
 ### Acceso a la aplicación
+
 El acceso a la aplicación es a través de un **navegador web**. Depende de tres factores:
 1. El protocolo utilizado
 Que puede ser **HTTPS** o **HTTP**
@@ -270,15 +281,18 @@ Por ejemplo la ruta por defecto de la aplicación sería
 ```
 https://localhost:3000
 ```
+
 ### Entornos de ejecución 
 
 Todos los comandos son validos para el **entorno de desarrollo** y el **entorno de explotación.**
 
 Ambos necesitan únicamente **Node** y **NPM** para funcionar. 
 
-Para el desarrollo es recomendable el uso de [git](https://git-scm.com) o alguna aplicación similar, para el versionado del código, y el uso de un **IDE**.
+Para el desarrollo es recomendable el uso de [git](https://git-scm.com) o alguna aplicación similar, para el versionado del código, tener un navegador web como [Chrome](https://www.google.com/intl/es_es/chrome/) o [Firefox](https://www.mozilla.org/firefox/download/thanks/), el uso de un **IDE**.
 
 El IDE usado para el desarrollo de la aplicación ha sido [visual studio code](https://code.visualstudio.com/)
+
+En el entorno de explotación es recomendable un sistema para la administración remota. Por ejemplo **SSH**
 
 ### Depuración del código
 
