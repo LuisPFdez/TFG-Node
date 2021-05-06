@@ -259,7 +259,7 @@ El código fuente se compone de 2 carpetas. A las que hay que añadir otra neces
 
 **Esquema de la estructura de forma mas detallada**
 <!--Imagen insertada con código HTML para especificar la altura-->
-<img src="./docs/images/EA.PNG" height="450">
+<img src="./docs/images/EA.png" height="450">
 
 
 ### Acceso a la aplicación
