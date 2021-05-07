@@ -226,13 +226,16 @@ Ejecuta la aplicación con nodemon, librería que evita tener que reiniciar el s
 Cmpila la aplicación (usa el script build) y la ejecuta con nodemon
 
 * **build** -- `npm run build`
-Compila el código de TypeScript a JavaScript y copia los demas archivos a la carpeta de salida. Compuesto por los scripts lint y css
+Compila el código de TypeScript a JavaScript y copia los demás archivos a la carpeta de salida. Compuesto por los scripts lint, css y copy
 
 * **lint** -- `npm run lint`
 Comprueba la sintaxis de TypeScript y JavaScript. Puede lanzar errores o advertencias. Los errores detendrán el script.
 
 * **css** -- `npm run css`
 A través de postcss transforma el contenido de tailwind.config.js y public/estilo.css en css puro. Incluyendo el css base de tailwindcss
+
+* **copy** -- `npm run copy`
+Permite copiar todos los demás archivos que no son de TypeScript, al principio el código pertenecia a script **build**.
 
 * **dbInit** -- `npm run dbInit`
 Ejecuta el script de la carga inicial de la base de datos

@@ -31,9 +31,10 @@
     "start": "node ./dist",
     "dev": "nodemon ./dist",
     "devBuild": "npm run build && nodemon ./dist",
-    "build": "npm run lint && tsc && npm run css && copyfiles -u 1 src/**/* -e '**/*.ts' -e 'src/public/estilo.css' dist/",
+    "build": "npm run lint && tsc && npm run css && npm run copy",
     "lint": "eslint --ext .ts src/ --no-error-on-unmatched-pattern",
     "css": "postcss src/public/estilo.css -o dist/public/estilo.css",
+    "copy": "copyfiles -u 1 src/**/* -e '**/*.ts' -e 'src/public/estilo.css' -e 'src/public/components/*' dist/",
     "dbInit": "node ./dist/scripts/baseDatos"
   },
   "repository": {
