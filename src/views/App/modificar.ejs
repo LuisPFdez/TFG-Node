@@ -1,15 +1,21 @@
 <!-- Vista para modificar usuarios -->
 <form action="/app/modificar_password" method="POST">
-    <label>Contraseña</label>
-    <input type="password" name="password"><br>
+    <label for="password" class="<%= typeof error !='undefined' && error.password != null ? 'label-err' : 'label-norm'; %>">Contraseña</label><br>
+    <article class="flex justify-center w-full">
+        <input type="password" id="password" name="password" class="<%= typeof error !='undefined' && error.password != null ? 'input-err' : 'input-norm mb-5'; %>" autocomplete="off">
+    </article><br>
     <%if (typeof password !='undefined' && password != null ){%>
-        <span><%= password %></span><br>
+        <p class="text-err text-center"><%= password %></p><br>
     <%}%>
-    <label>Confirmar Contraseña</label>
-    <input type="password" name="passwordC"><br>
+    <label for="passwordC" class="<%= typeof error !='undefined' && error.passwordC != null ? 'label-err' : 'label-norm'; %>">Confirmar Contraseña</label><br>
+    <article class="flex justify-center w-full">
+        <input type="password" id="passwordC" name="passwordC" class="<%= typeof error !='undefined' && error.passwordC != null ? 'input-err' : 'input-norm mb-5'; %>" autocomplete="off">
+    </article><br>
     <%if (typeof passwordC !='undefined' && passwordC != null ){%>
-        <span><%= passwordC %></span><br>
+        <p class="text-err text-center"><%= passwordC %></p><br>
     <%}%>
-    <button type="submit" name="cambiar">Cambiar Contraseña</button><br>
-    <button type="submit" name="cancelar">Cancelar</button>
+    <article class="flex flex-row justify-around">
+        <button type="submit" name="cambiar" class="boton-confirm2 mr-4">Cambiar Contraseña</button><br>
+        <button type="submit" name="cancelar" class="boton-cancelar2">Cancelar</button>
+    </article>
 </form>

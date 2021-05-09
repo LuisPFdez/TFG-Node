@@ -1,25 +1,35 @@
 <!-- Formulario de registro -->
 <form action="/registro" method="POST">
-    <label>Usuario</label>
-    <input type="text" name="usuario" value="<%= typeof usuario != 'undefined' ? usuario : '' ;   %>"><br>
+    <label for="usuario" class="<%= typeof error !='undefined' && error.usuario != null ? 'label-err' : 'label-norm'; %>">Usuario</label><br>
+    <article class="flex justify-center w-full">
+        <input type="text" id="usuario" name="usuario" class="<%= typeof error !='undefined' && error.usuario != null ? 'input-err' : 'input-norm mb-5'; %>" autocomplete="off" value="<%= typeof usuario != 'undefined' ? usuario : '' ;   %>">
+    </article><br>
     <%if (typeof error !='undefined' && error.usuario != null ){%>
-        <span><%= error.usuario %></span><br>
+        <p class="text-err text-center"><%= error.usuario %></p><br>
     <%}%>
-    <label>Descripcion</label>
-    <input type="text" name="descripcion" value="<%= typeof descripcion != 'undefined' ? descripcion : '' ;   %>"><br>
+    <label for="descripcion" class="<%= typeof error !='undefined' && error.descripcion != null ? 'label-err' : 'label-norm'; %>">Descripcion</label><br>
+    <article class="flex justify-center w-full">
+        <input type="text" id="descripcion" name="descripcion" class="<%= typeof error !='undefined' && error.descripcion != null ? 'input-err' : 'input-norm mb-5'; %>" autocomplete="off" value="<%= typeof descripcion != 'undefined' ? descripcion : '' ;   %>">
+    </article><br>
     <%if (typeof error !='undefined' && error.descripcion != null ){%>
-        <span><%= error.descripcion %></span><br>
+        <p class="text-err text-center"><%= error.descripcion %></p><br>
     <%}%>
-    <label>Contraseña</label>
-    <input type="password" name="password"><br>
+    <label for="password" class="<%= typeof error !='undefined' && error.password != null ? 'label-err' : 'label-norm'; %>">Contraseña</label><br>
+    <article class="flex justify-center w-full">
+        <input type="password" id="password" name="password" class="<%= typeof error !='undefined' && error.password != null ? 'input-err' : 'input-norm mb-5'; %>" autocomplete="off">
+    </article><br>
     <%if (typeof error !='undefined' && error.password != null ){%>
-        <span><%= error.password %></span><br>
+        <p class="text-err text-center"><%= error.password %></p><br>
     <%}%>
-    <label>Confirmar Contraseña</label>
-    <input type="password" name="passwordC"><br>
+    <label for="passwordC" class="<%= typeof error !='undefined' && error.passwordC != null ? 'label-err' : 'label-norm'; %>">Confirmar Contraseña</label><br>
+    <article class="flex justify-center w-full">
+        <input type="password" id="passwordC" name="passwordC" class="<%= typeof error !='undefined' && error.passwordC != null ? 'input-err' : 'input-norm mb-5'; %>" autocomplete="off">
+    </article><br>
     <%if (typeof error !='undefined' && error.passwordC != null ){%>
-        <span><%= error.passwordC %></span><br>
+        <p class="text-err text-center"><%= error.passwordC %></p><br>
     <%}%>
-    <button type="submit" name="registro">Registrarse</button><br>
-    <button type="submit" name="cancelar">Cancelar</button>
+    <article class="flex flex-row justify-around">
+        <button type="submit" name="registro" class="boton-confirm2">Registrarse</button><br>
+        <button type="submit" name="cancelar" class="boton-cancelar2">Cancelar</button>
+    </article>
 </form>

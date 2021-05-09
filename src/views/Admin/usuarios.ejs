@@ -1,11 +1,11 @@
 <!-- Vista para mostrar un listado de los usuarios. Recibe un array que contiene los usuarios-->
 <% usuarios.forEach( (usuario) => { %>
-    <section onclick="redirigir('/admin/usuarios/<%= usuario.codUsuario %>')">
-        <article><%= usuario.codUsuario %></article>
-        <article><%= usuario.descripcion %></article>
-        <article><%= usuario.tipo %></article>
+    <section onclick="redirigir('/admin/usuarios/<%= usuario.codUsuario %>')" class="mb-5 w-full grid grid-cols-1 sm:grid-cols-3 justify-around gap-5 border-Usuarios hover:border-Usuarioshv border-2 rounded-full bg-Usuarios hover:bg-Usuarioshv text-center text-Usuarios hover:text-Usuarioshv px-2 sm:px-4 py-3 sm:py-5" >
+        <article ><%= usuario.codUsuario %></article>
+        <article ><%= usuario.descripcion %></article>
+        <article ><%= usuario.tipo %></article>
     </section>
 <% })%><br>
 <form action="/admin/usuarios" method="POST">
-    <button type="submit" name="volverU">Volver</button>
+    <button type="submit" name="volverU" class="boton-confirm">Volver</button>
 </form>

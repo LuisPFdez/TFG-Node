@@ -3,6 +3,115 @@
  * Ha de ser compilado para ser usado
  * El archivo es comun para todas las paginas
  */
+
+ /**
+ *  
+ *  
+ *     
+ * 
+ */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    /*Aplica a todos los elementos un border-box*/
+    *{
+        @apply box-border;
+    }
+
+}
+
+@layer components{
+    /*Titulos*/
+    /*Titulo base*/
+    .titulo{
+        @apply text-center text-titulos font-Abel mb-2 s4:mb-5;
+    }
+    /*Titulo normal*/
+    .titulo-norm{
+        @apply titulo text-4xl s4:text-5xl;
+    }
+
+    /*Titulo reducido*/
+    .titulo-redu{
+        @apply titulo text-xl s4:text-2xl;
+    }
+
+    /* Botones */
+    
+    /*Boton base para los demas*/
+    .boton{
+        @apply appearance-none font-Hind font-semibold py-1 px-2 s4:py-2 s4:px-4 border-2 rounded;
+    }
+    /*Boton base, forma mas pequeña*/
+    .boton2{
+        @apply appearance-none font-Hind font-semibold text-sm py-0 px-1 s4:py-1 s4:px-2 border rounded;
+    }
+
+    /*Estilo boton para confirmar*/
+    .boton-confirm{
+        @apply boton bg-boton-confirm hover:bg-boton-confirmHv text-boton-confirm hover:text-boton-confirmHv border-boton-confirm hover:border-boton-confirmHv;
+    }
+
+    /*Estilo boton de confirmar, mas pequeño*/
+    .boton-confirm2{
+        @apply boton2 bg-boton-confirm hover:bg-boton-confirmHv text-boton-confirm hover:text-boton-confirmHv border-boton-confirm hover:border-boton-confirmHv;
+    }
+
+    /*Estilo boton de cancelar*/
+    .boton-cancelar{
+        @apply boton bg-boton-cancelar hover:bg-boton-cancelarHv text-boton-cancelar hover:text-boton-cancelarHv border-boton-cancelar hover:border-boton-cancelarHv;
+    }
+
+    /*Estilo boton de cancelar, mas pequeño*/
+    .boton-cancelar2{
+        @apply boton2 bg-boton-cancelar hover:bg-boton-cancelarHv text-boton-cancelar hover:text-boton-cancelarHv border-boton-cancelar hover:border-boton-cancelarHv;
+    }
+
+    .boton-des2{
+        @apply boton2 bg-boton-des text-boton-des border-boton-des;
+    }
+
+    /*Etiquetas (labels)*/
+    /*Estilo etiqueta base apara los demas*/
+    .label{
+        @apply appearance-none text-center inline-block w-full;
+    }
+
+    /*Estilo etiqueta normal*/
+    .label-norm{
+        @apply label text-label-norm  ;
+    }
+
+    .label-des{
+        @apply label text-label-des;
+    }
+    /*Estilo etiqueta para errores*/
+    .label-err{
+        @apply label text-err;
+    }
+
+    /*Inputs*/
+    /*Estilo input base*/
+    .input{
+        @apply text-center appearance-none bg-transparent w-full mr-3 py-1 px-2 leading-tight focus:outline-none border-b-2 text-lg text-black sm:max-w-3/5;
+    }
+
+    /*Estilo input normal*/
+    .input-norm {
+        @apply input border-input-norm1 focus:border-input-norm2 hover:border-input-norm2;
+    }
+
+    /*Estilo input desactivado*/
+    .input-des {
+        @apply input border-input-des;
+    }
+
+    /*Estilo input error*/
+    .input-err {
+        @apply input border-input-err1 focus:border-input-err2 hover:border-input-err2;
+    }
+}

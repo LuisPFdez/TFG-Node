@@ -1,11 +1,13 @@
 <!-- Vista de inicio-->
-<h3> Bienvenido <%= usuario.descripcion %> </h3>
-<form action="/app/inicio" method="POST">
-    <button type="submit" name="editar">Editar Perfil</button>
-    <button type="submit" name="modificar">Cambiar Contraseña</button>
-    <button type="submit" name="borrar">Borrar Perfil</button>
-    <button type="submit" name="cerrar">Cerrar Sesión</button><br>
+<h3 class="titulo-norm"> Bienvenido <%= usuario.descripcion %> </h3>
+<form action="/app/inicio" method="POST" class="flex items-center gap-5 justify-center flex-wrap">
+    <button type="submit" name="editar" class="boton-confirm2">Editar Perfil</button>
+    <button type="submit" name="modificar" class="boton-confirm2">Cambiar Contraseña</button>
+    <button type="submit" name="borrar" class="boton-cancelar2">Borrar Perfil</button>
     <% if ( admin == true ) { %>
-        <button type="submit" name="usuarios">Listado de Usuarios</button>
+        <button type="submit" name="usuarios" class="boton-confirm2">Listado de Usuarios</button>
     <% } %>
+    <article class="w-full">
+        <button type="submit" name="cerrar" class="mt-5 boton-cancelar ">Cerrar Sesión</button>
+    </article>
 </form>

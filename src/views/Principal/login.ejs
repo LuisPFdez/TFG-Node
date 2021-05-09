@@ -1,14 +1,20 @@
 <!-- Vista para iniciar sesión-->
 <form action="/login" method="POST">
-    <label>Usuario: </label><br>
-    <input type="text" name="usuario" value="<%= typeof usuario != 'undefined' ? usuario : '' ;   %>"><br>
-    <label>Contraseña: </label><br>
-    <input type="password" name="password"><br>
+    <label for="usuario" class="label-norm">Usuario:</label><br>
+    <article class="flex justify-center w-full">
+        <input type="text" id="usuario" name="usuario" class="input-norm mb-5" autocomplete="off" value="<%= typeof usuario != 'undefined' ? usuario : '' ;   %>">
+    </article><br>
+    <label for="password" class="<%= typeof error =='undefined' ? 'label-norm' : 'label-err' %>">Contraseña: </label><br>
+    <article class="flex justify-center w-full">
+        <input type="password" id="password"  class="<%= typeof error !='undefined' ? 'input-err' : 'input-norm mb-5' %>" name="password" autocomplete="off">
+    </article><br>
     <%if (typeof error !='undefined' ){%>
-        <span>
+        <p class="text-err text-center">
             <%= error %>
-        </span><br>
+        </p><br>
     <%}%>
-    <button type="submit" name="login">Iniciar Sesión</button><br>
-    <button type="submit" name="volver">Volver</button>
+    <article class="flex flex-row justify-around">
+        <button type="submit" name="login" class="boton-confirm2">Iniciar Sesión</button><br>
+        <button type="submit" name="volver" class="boton-cancelar2">Volver</button>
+    </article>
 </form>

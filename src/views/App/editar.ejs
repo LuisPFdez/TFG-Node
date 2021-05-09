@@ -1,15 +1,23 @@
 <!-- Vista para editar usuarios -->
 <form action="/app/editar" method="POST">
-    <label>CodUsuario: </label><br>
-    <input type="text" readonly value="<%= usuario.codUsuario %>"><br>
-    <label>Descripcion: </label><br>
-    <input type="text" value="<%= usuario.descripcion %>" name="descripcion"><br>
+    <label for="codUSuario" class="label-des">CodUsuario</label><br>
+    <article class="flex justify-center w-full"> 
+        <input type="text" name="codUSuario" id="codUSuario" class="input-des mb-5" readonly value="<%= usuario.codUsuario %>">
+    </article><br>
+    <label for="descripcion" class="<%= typeof eDescripcion !='undefined' ? 'label-err' : 'label-norm' ; %>">Descripcion</label><br>
+    <article class="flex justify-center w-full"> 
+        <input type="text" name="descripcion" id="descripcion" class="<%= typeof eDescripcion !='undefined' ? 'input-err' : 'input-norm mb-5' ; %>" value="<%= usuario.descripcion %>">
+    </article><br>
     <%if (typeof eDescripcion !='undefined' ){%>
-        <span><%= eDescripcion %></span><br>
+        <p class="text-center text-err"><%= eDescripcion %></p><br>
     <%}%>
     
-    <label>Tipo de Usuario: </label><br>
-    <input type="text" readonly value="<%= usuario.tipo %>"><br>
-    <button type="submit" name="editar">Editar</button>
-    <button type="submit" name="cancelar">Cancelar</button>
+    <label for="tipo" class="label-des">Tipo de Usuario</label><br>
+    <article class="flex justify-center w-full"> 
+        <input type="text" name="tipo" id="tipo" class="input-des mb-5" readonly value="<%= usuario.tipo %>">
+    </article><br>
+    <article class="flex flex-row justify-around">
+        <button type="submit" name="editar" class="boton-confirm2">Editar</button>
+        <button type="submit" name="cancelar" class="boton-cancelar2">Cancelar</button>
+    </article>
 </form>

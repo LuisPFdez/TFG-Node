@@ -1,14 +1,23 @@
 <!-- 
-    Página para mostrar un usuario. 
+    Vista para mostrar un usuario. 
     Permite mostrar un mensaje indicando que el usuario no existe.
  -->
 <% if ( existe ) { %>
 <form action="/admin/usuarios" method="post">
-    <input type="text" name="codigo" readonly id="" value="<%= usuario.codUsuario %>"> <br>
-    <input type="text" name="descripcion" readonly id="" value="<%= usuario.descripcion %>"><br>
-    <input type="text" name="tipo" readonly id="" value="<%= usuario.tipo %>"><br>
-    <button type="submit" name="volverUS">Volver</button>
+    <label for="codigo" class="label-des">Codigo Usuario</label>
+    <article class="flex justify-center w-full">
+        <input type="text" name="codigo" id="codigo" class="input-des mb-5" readonly value="<%= usuario.codUsuario %>">
+    </article><br>
+    <label for="descripcion" class="label-des">Descripcion</label>
+    <article class="flex justify-center w-full">
+        <input type="text" name="descripcion" id="descripcion" class="input-des mb-5" readonly value="<%= usuario.descripcion %>">
+    </article><br>
+    <label for="tipo" class="label-des">Tipo</label>
+    <article class="flex justify-center w-full">
+        <input type="text" name="tipo" id="tipo" class="input-des mb-5" readonly value="<%= usuario.tipo %>">
+    </article><br>
+    <button type="submit" name="volverUS" class="boton-confirm">Volver</button>
 </form>
 <% } else { %>
-    <p>El usuario, <%= codigo %>, no existe </p>
+    <p class="text-err text-lg sm:text-2xl">El usuario, <b><%= codigo %></b>, no existe </p>
 <% } %>

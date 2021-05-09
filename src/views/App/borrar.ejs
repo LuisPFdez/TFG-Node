@@ -1,21 +1,12 @@
 <!-- Vista para borrar usuarios -->
-<p>¡Atencion esta acción es irreversible!</p>
+<p class="titulo-redu">¡Atencion esta acción es irreversible!</p>
 <form action="/app/borrar" method="POST">
-    <label>Introduce <span id="codigo">borrar/<%= usuario.codUsuario %></span></label><br>
-    <input type="text" id="iCodigo"><br>
-    <button type="submit" name="borrar" id="bBorrar">Borrar</button>
-    <button type="submit" name="cancelar">Cancelar</button>
+    <label for="iCodigo" class="label-norm">Introduce <span id="codigo">borrar/<%= usuario.codUsuario %></span></label><br>
+    <article class="flex justify-center w-full">
+        <input type="text" id="iCodigo" name="iCodigo" onkeyup="desactivarBoton(this, bBorrar, codigo)" class="input-norm mb-5" autocomplete="off">
+    </article><br>
+    <article class="flex flex-row justify-around">
+        <button type="submit" name="borrar" id="bBorrar" disabled class="boton-des2">Borrar</button>
+        <button type="submit" name="cancelar" class="boton-cancelar2">Cancelar</button>
+    </article>
 </form>
-
-<script>
-    //El codigo embebido en el html es temporal
-    const boton = document.getElementById("bBorrar");
-    boton.disabled = true;
-    document.getElementById("iCodigo").addEventListener("keyup", function () {
-        const codigo = document.getElementById("codigo");
-        console.log(this.value, codigo.innerHTML);
-        if (codigo.innerHTML == this.value) {
-            boton.disabled = false;
-        }
-    });
-</script>

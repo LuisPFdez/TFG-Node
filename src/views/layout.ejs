@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-full">
 
 <!-- Vista principal que contiene la cabecera y el pie de página -->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/estilo.css">
     <title>TFG-Node</title>
 </head>
 
-<body>
-    <header>
-        <h2 class="font-nunito">TFG-Node</h2>
-        <h3>
+<body class="flex flex-col h-screen">
+    <header class="relative h-20 bg-Cabecera text-Cabecera font-Abel p-2 ">
+        <h2 class="text-2xl">TFG-Node</h2>
+        <h3 class="text-xl text-right">
             <!-- El título se pasará por variable, cambiando según la página en la que se encuentre -->
             <%= titulo %>
         </h3>
     </header>
-    <main>
-        <!-- 
-            No todas las Vistas necesitan ser incluidas con pasandole parametros.
-            En caso de estar definido, se incluiran con datos. El include necesita de una variable para saber que incluir
-        -->
-        <% if( typeof datos !='undefined' ) { %>
-            <%- include(archivo, datos)%>
-        <% } else { %>
-            <%- include(archivo)%>
-        <% } %>
+    <main class="flex-auto p-2 sm:p-5 w-full flex items-center justify-center">
+        <article class="w-auto sm:max-w-3/5 border-main border-opacity-50 border-2 shadow-xl max-h-4/5 p-2 s4:p-5">
+            <!-- 
+                No todas las Vistas necesitan ser incluidas con pasandole parametros.
+                En caso de estar definido, se incluiran con datos. El include necesita de una variable para saber que incluir
+            -->
+            <% if( typeof datos !='undefined' ) { %>
+                <%- include(archivo, datos)%>
+            <% } else { %>
+                <%- include(archivo)%>
+            <% } %>
+        </article>
     </main>
-    <footer>
+    <footer class="w-full flex justify-center gap-5 sm:gap-16 items-center bg-Cabecera text-Cabecera font-Abel text-xl p-2 relative bottom-0 ">
         &copy;Luis Puente Fernandez
+        <a href="https://github.com/LuisPFdez/TFG-Node.git"><img src="/images/gitHub.png" class="w-14 h-14"></a>
     </footer>
     <script src="/script.js"></script>
 </body>

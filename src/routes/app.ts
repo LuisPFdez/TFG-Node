@@ -174,7 +174,7 @@ rutas.post("/borrar", reautenticar, manejadorErroresNext(async (req: Request, re
 
     }
 
-    req.siguiente = "app/inicio";
+    req.siguiente = "/app/inicio";
     return next();
 }), reautenticarFin);
 

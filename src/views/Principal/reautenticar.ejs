@@ -1,12 +1,16 @@
 <!-- Vista reautentacarse -->
-<h2>Por favor <%= usuario.codUsuario %>, introduce tu contraseña</h2>
-<p>Una vez reautenticado, no se volvera a solicitar que vuelves a introducir la contraseña, hasta que canceles o realices el cambio correctamente</p>
-<p>Si sales de alguna forma, que el servidor no contempla, alguien podrá cambiar tus credenciales</p>
+<h2 class="titulo-redu">Por favor <%= usuario.codUsuario %>, introduce tu contraseña</h2>
+<p class="text-justify">Una vez reautenticado, no se volvera a solicitar que vuelves a introducir la contraseña, hasta que canceles o realices el cambio correctamente</p>
+<p class="text-justify">Si sales de alguna forma, que el servidor no contempla, alguien podrá cambiar tus credenciales sin necesidad de autenticarse</p>
 <form action="/reautenticar" method="POST">
-    <input type="password" name="password"><br>
+    <article class="flex justify-center w-full">
+        <input type="password" name="password" class="<%= typeof ePassword !='undefined' ? 'input-err' : 'input-norm mb-5' ; %>"><br>
+    </article>
     <%if (typeof ePassword !='undefined' ){%>
-        <span><%= ePassword %></span><br>
+        <p class="text-center text-err"><%= ePassword %></p><br>
     <%}%>
-    <button type="submit" name="aceptar">Entrar</button><br>
-    <button type="submit"name="cancelar">Cancelar</button>
+    <article class="flex flex-row justify-around">
+        <button type="submit" name="aceptar" class="boton-confirm">Entrar</button><br>
+        <button type="submit"name="cancelar" class="boton-cancelar">Cancelar</button>
+    </article>
 </form>
