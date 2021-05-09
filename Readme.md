@@ -1,6 +1,6 @@
 # TFG Node
 
-Trabajo de fin de grado con Node.js, Firebase y TailwindCSS
+Trabajo de fin de grado con Node.js, Firebase y TailwindCSS.
 
 <img height="300" src="./docs/images/Logo.png">
 
@@ -8,7 +8,7 @@ Trabajo de fin de grado con Node.js, Firebase y TailwindCSS
 
 ## Índice
 
-**Haz click sobre algún apartado para moverte a el**
+**Haz click sobre algún apartado para moverte a él**
 
 * [**Autenticación de usuarios con Node.js y Firebase**](#autenticación-de-usuarios-con-nodejs-y-firebase)
     * [**Descripción**](#descripción)
@@ -29,6 +29,7 @@ Trabajo de fin de grado con Node.js, Firebase y TailwindCSS
     * [**Scripts de desarrollo y ejecución**](#scripts-de-desarrollo-y-ejecución)
     * [**Estructura de almacenamiento**](#estructura-de-almacenamiento)
     * [**Acceso a la aplicación**](#acceso-a-la-aplicación)
+    * [**Modificación del estilo**](#modificación-del-estilo)
     * [**Entornos de ejecución**](#entornos-de-ejecución)
     * [**Depuración del código**](#depuración-del-código)
 
@@ -38,17 +39,17 @@ Trabajo de fin de grado con Node.js, Firebase y TailwindCSS
 
 ### Descripción
 
-Proyecto desarrollado como trabajo de fin de grado para el ciclo formativo DAW
+Proyecto desarrollado como trabajo de fin de grado para el ciclo formativo DAW.
 
 ### Tecnologias Usadas
 
-* **Nodejs**, entorno de ejecución de JavaScript
-* **NPM**, gestor de paquetes de JavaScript
-* **Plataforma Firebase**, únicamente su base de datos, Firestore
-* **TypeScript**, superconjunto de JavaScript, lenguaje de programación usado en elproyecto
-* **Express**, librería de Nodejs permite una rápida configuración de un servidor
-* **Tailwindcss**, librería de css
-* **EJS**, sistema de plantillas de código JavaScript embebido
+* **Nodejs**, entorno de ejecución de JavaScript.
+* **NPM**, gestor de paquetes de JavaScript.
+* **Plataforma Firebase**, únicamente su base de datos, Firestore.
+* **TypeScript**, superconjunto de JavaScript, lenguaje de programación usado en el proyecto.
+* **Express**, librería de Nodejs permite una rápida configuración de un servidor.
+* **Tailwindcss**, librería de css.
+* **EJS**, sistema de plantillas de código JavaScript embebido.
 
 ### Dependencias 
 
@@ -60,19 +61,20 @@ Proyecto desarrollado como trabajo de fin de grado para el ciclo formativo DAW
 * [**EJS**](http://npmjs.com/package/ejs)
 * [**Crypto-js**](https://www.npmjs.com/package/crypto-js), permite usar funciones HASH para encriptar datos.
 * [**Cookie-parser**](https://www.npmjs.com/package/cookie-parser), middleware encargado de analizar las cookies y convertirlas a un objeto, necesario para el uso de la sesión.
-* [**Express-session**](https://www.npmjs.com/package/express-session), permite la creación y uso de sesiones de manera sencilla
+* [**Express-session**](https://www.npmjs.com/package/express-session), permite la creación y uso de sesiones de manera sencilla.
 * [**Firebase-admin**](https://www.npmjs.com/package/firebase-admin), librería  para trabajar con la base de datos, Frestore.
 
 #### Dependecias de desarrollo
 
-* [**TypeScript**](https://www.npmjs.com/package/typescript), compilador de TypeScript a JavaScript
-* [**Copyfiles**](https://www.npmjs.com/package/copyfiles), permite copiar archivos en función de los parámetros. Permitiendo copiar los archivos en la carpeta de salida al compilar
-* [**Nodemon**](https://www.npmjs.com/package/nodemon), reinicia de forma automática el servidor cada vez que se realizan cambios, evitando tener que reiniciar constantemente
-* [**EsLint**](https://www.npmjs.com/package/eslint), librería que analiza sintácticamente el código
-* [**Postcss**](https://www.npmjs.com/package/postcss), permite convertir CSS mediante JavaScript, es una dependencia opcional de tailwindcss
-* [**Postcss-cli**](https://www.npmjs.com/package/postcss-cli), interfaz de línea de comandos de postcss
+* [**TypeScript**](https://www.npmjs.com/package/typescript), compilador de TypeScript a JavaScript.
+* [**Copyfiles**](https://www.npmjs.com/package/copyfiles), permite copiar archivos en función de los parámetros. Permitiendo copiar los archivos en la carpeta de salida al compilar.
+* [**Nodemon**](https://www.npmjs.com/package/nodemon), reinicia de forma automática el servidor cada vez que se realizan cambios, evitando tener que reiniciar constantemente.
+* [**EsLint**](https://www.npmjs.com/package/eslint), librería que analiza sintácticamente el código.
+* [**Postcss**](https://www.npmjs.com/package/postcss), permite convertir CSS mediante JavaScript, es una dependencia opcional de tailwindcss.
+* [**Postcss-cli**](https://www.npmjs.com/package/postcss-cli), interfaz de línea de comandos de postcss.
 * [**Tailwindcss**](https://www.npmjs.com/package/tailwindcss)
-* [**Autoprefixer**](https://www.npmjs.com/package/autoprefixer), dependencia recomendada para tailwindcss, añade prefijos al código css. Como *-moz-*, *-ms-*, *-webkit-*. Ver [*Vendor Prefix*](https://developer.mozilla.org/es/docs/Glossary/pos)
+* [**Autoprefixer**](https://www.npmjs.com/package/autoprefixer), dependencia recomendada para tailwindcss, añade prefijos al código css. Como *-moz-*, *-ms-*, *-webkit-*. Ver [*Vendor Prefix*](https://developer.mozilla.org/es/docs/Glossary/pos).
+* [**Cssnano**](https://www.npmjs.com/package/cssnano), plugins de Postcss, minifica (elimina todos los espacios para reducir el tamaño del código) el código
 * **@types**, archivos de declaración, permite a TypeScript usar paquetes JavaScript. Un archivo de declaración proporciona información sobre los archivos JavaScript.
 
 ### Bibliografías
@@ -92,7 +94,7 @@ Son todas páginas de la documentación oficial, debido a la gran cantidad de pa
 
 ### Licencia
 
-Proyecto distribuido bajo lincencia MIT. Mas información en la [licencia](./LICENSE)
+Proyecto distribuido bajo lincencia MIT. Mas información en la [licencia](./LICENSE).
 
 ----
 
@@ -109,33 +111,33 @@ Proyecto distribuido bajo lincencia MIT. Mas información en la [licencia](./LIC
 
 ### Instalación 
 
-**Es necesario al menos una clave privada de la base de datos. [Archivos de configuración](#archivos-de-configuración-de-la-aplicación)**
+**Es necesario al menos una clave privada de la base de datos. [Archivos de configuración](#archivos-de-configuración-de-la-aplicación)**.
 
 #### Instalar desde código compilado
 
-Descargar el [código compilado](https://github.com/LuisPFdez/TFG-Node/releases/latest)
+Descargar el [código compilado](https://github.com/LuisPFdez/TFG-Node/releases/latest).
 
 Al descomprimir el código, deben de aparecer dos archivos y una carpeta (**_package.json_**, **_package-lock.json_** y **_dist_** ). 
 
-Antes de ejecutar la aplicación es necesario instalar las dependencias con `npm install --production`. 
+Antes de ejecutar la aplicación es necesario instalar las dependencias con `npm install --production`
 Es necesario no olvidar el parametro **--production**, de lo contrario instalará también las dependencias de desarrollo.
 
 Una vez finalizado generará una carpeta llamada *node_modules*, con las dependencias necesarias.
 
-Con el comando `npm start` se ejecutará la aplicación, en caso de que no funcione ejecuta `node dist/index.js` 
+Con el comando `npm start` se ejecutará la aplicación, en caso de que no funcione ejecuta `node dist/index.js`
 
 #### Instalar desde el código fuente
 
-Descarga el código fuente con `git clone https://github.com/LuisPFdez/TFG-Node.git` o descargar el comprimido
+Descarga el código fuente con `git clone https://github.com/LuisPFdez/TFG-Node.git` o descargar el comprimido.
 
-Instalar las dependencias con `npm install`. Al final, deberá de haber generado una carpeta llamada *node_modules*
+Instalar las dependencias con `npm install`. Al final, deberá de haber generado una carpeta llamada *node_modules*.
 
-Compilar el código con el comando `npm run build`, esto deberá de generar una carperta llamada **dist**
+Compilar el código con el comando `npm run build`, esto deberá de generar una carperta llamada **dist**.
 
 Una vez compilado, puedes ejecutarlo con `npm start` o `node dist/index.js`
 
 
-**Para acceder a la [aplicación](#acceso-a-la-aplicación)**
+**Para acceder a la [aplicación](#acceso-a-la-aplicación)**.
 
 ### Configuración de Firestore
 
@@ -156,13 +158,13 @@ En caso de necesitar hacer una caga inicial en la base de datos es recomendable 
 La aplicación necesita de dos archivos de configuración necesario para funcionar, y de otros dos opcionales, aunque recomendados por seguridad. 
 
 * [ConfigDB.json](./src/config/ConfigDB.json) 
-Clave privada de la base de datos, ha de ser llamada obligatoriamente **ConfigDB.json** 
+Clave privada de la base de datos, ha de ser llamada obligatoriamente **ConfigDB.json**.
 * [Config.json](./src/config/Config.json) 
 Archivo de configuración que especifica: 
-    * **Puerto**: El puerto en el estará escuchando la aplicación, por defecto el puerto **3000**
-    * **N_Cert**: Nombre de los certificados SSL, por defecto **clave**
-    * **Coleccion**: Nombre de la colleción de la base de datos, por defecto **Usuarios**
-    * **Rutas**: objeto con las rutas relativas de las vistas, siendo [views](./src/views) el directorio padre, son necesarias para el renderizado 
+    * **Puerto**: El puerto en el estará escuchando la aplicación, por defecto el puerto **3000**.
+    * **N_Cert**: Nombre de los certificados SSL, por defecto **clave**.
+    * **Coleccion**: Nombre de la colleción de la base de datos, por defecto **Usuarios**.
+    * **Rutas**: objeto con las rutas relativas de las vistas, siendo [views](./src/views) el directorio padre, son necesarias para el renderizado.
 
 * Archivos para el certificado SSL
 Archivos opcionales para HTTPS, sus extensiones han de ser **.key** para la clave privada y **.crt** para el certificado firmado. Los nombres han de coincidir con N_Cert de Config.json.
@@ -190,22 +192,22 @@ app.listen(config.Puerto);
 ### Archivos de configuración
 
 * [.eslintignore](./.eslintignore)
-Archivo que le indica a ESLint que ficheros o directorios ignorar
+Archivo que le indica a ESLint que ficheros o directorios ignorar.
 
 * [.eslintrc.json](./.eslintrc.json)
-Archivo de configuración de ESLint
+Archivo de configuración de ESLint.
 
 * [.gitignore](./.gitignore)
-Archivo que indica a git a que carpetas o archivos, ignorar en el commit
+Archivo que indica a git a que carpetas o archivos, ignorar en el commit.
 
 * [package.json](./package.json)
 Archivo de configuración de NPM, entre sus multiples funciones, indica el repositorio del proyecto, sus dependencias, normales y de desarrollo y script para facilitar el proceso de desarrollo e instalación.
 
 * [postcss.config.js](./postcss.config.js)
-Archivo de configuración para postcss 
+Archivo de configuración para postcss.
 
 * [tailwind.config.js](./tailwind.config.js)
-Archivo de configuración para tailwindcss
+Archivo de configuración para tailwindcss.
 
 * [tsconfig.json](./tsconfig.json)
 Archivo de configuración para el compilador de typescript, le indica la carpeta de salida, el directorio del código fuente, las librerías necesarias para la compilación...
@@ -217,46 +219,46 @@ NPM, a travás del archivo package.json, permite el uso de scripts para tareas r
 **Algunos script se componen de otros para aprovechar sus funciones**
 
 * **start** -- `npm start`
-Ejecuta la aplicación 
+Ejecuta la aplicación.
 
 * **dev** -- `npm run dev`
 Ejecuta la aplicación con nodemon, librería que evita tener que reiniciar el servidor al realizar algún cambio en el código.
 
-* **devBuild** -- `npm run devBuild`
-Cmpila la aplicación (usa el script build) y la ejecuta con nodemon
+* **build:dev** -- `npm run build:dev`
+Cmpila la aplicación (usa el script build) y la ejecuta con nodemon.
 
 * **build** -- `npm run build`
-Compila el código de TypeScript a JavaScript y copia los demás archivos a la carpeta de salida. Compuesto por los scripts lint, css y copy
+Compila el código de TypeScript a JavaScript y copia los demás archivos a la carpeta de salida. Compuesto por los scripts lint, css y copy.
 
 * **lint** -- `npm run lint`
 Comprueba la sintaxis de TypeScript y JavaScript. Puede lanzar errores o advertencias. Los errores detendrán el script.
 
-* **css** -- `npm run css`
-A través de postcss transforma el contenido de tailwind.config.js y public/estilo.css en css puro. Incluyendo el css base de tailwindcss
+* **build:css** -- `npm run build:css`
+A través de postcss transforma el contenido de tailwind.config.js y public/estilo.css en css puro. Incluyendo el css base de tailwindcss. El código es minificado. 
 
 * **copy** -- `npm run copy`
 Permite copiar todos los demás archivos que no son de TypeScript, al principio el código pertenecia a script **build**.
 
 * **dbInit** -- `npm run dbInit`
-Ejecuta el script de la carga inicial de la base de datos
+Ejecuta el script de la carga inicial de la base de datos.
 
 ### Estructura de almacenamiento
 
 El código fuente se compone de 2 carpetas. A las que hay que añadir otra necesaria para los módulos y la carpeta que genera el compilador.
 
-* **dist**, código compilado, generado por el compilador de TypeScript, posee una estructura similar a **src**
+* **dist**, código compilado, generado por el compilador de TypeScript, posee una estructura similar a **src**.
 * **docs**, archivos de documentación e imágenes.
 * **node_modules**, carpeta donde se encuentra el código de las dependencias, se genera de forma automática. 
-* **src**, carpeta que contiene el código fuente
-    * **config**, archivos de configuración como la clave privada, certificado SSL o archivo JSON de configuración
-    * **controller**, contiene los módulos con las funciones necesarias para que la aplicación funcione. Como funciones para la autenticación o middlewares. También contiene un fichero de tipos
+* **src**, carpeta que contiene el código fuente.
+    * **config**, archivos de configuración como la clave privada, certificado SSL o archivo JSON de configuración.
+    * **controller**, contiene los módulos con las funciones necesarias para que la aplicación funcione. Como funciones para la autenticación o middlewares. También contiene un fichero de tipos.
     * **core**, conjunto de archivos, independientes de la aplicación, pero necesarios para el funcionamiento de esta.
     * **errors**, carpeta donde se almacenan las excepciones.
     * **model**, clases que proporcionan una estructura para la manipulación de los datos. 
-    * **public**, carpeta para el servicio de [archivos estaticos](https://expressjs.com/es/starter/static-files.html) de Express
-    * **routes**, carpeta que contiene los [metodos de rutas](https://expressjs.com/es/guide/routing.html) de Express
-    * **scripts**, scripts que facilitan ciertas tareas, como la carga inicial de información en la base de datos
-    * **views**, contiene todas las plantillas EJS
+    * **public**, carpeta para el servicio de [archivos estaticos](https://expressjs.com/es/starter/static-files.html) de Express.
+    * **routes**, carpeta que contiene los [metodos de rutas](https://expressjs.com/es/guide/routing.html) de Express.
+    * **scripts**, scripts que facilitan ciertas tareas, como la carga inicial de información en la base de datos.
+    * **views**, contiene todas las plantillas EJS.
     * **index.ts**, archivo principal.
 
 
@@ -269,12 +271,12 @@ El código fuente se compone de 2 carpetas. A las que hay que añadir otra neces
 
 El acceso a la aplicación es a través de un **navegador web**. Depende de tres factores:
 1. El protocolo utilizado
-Que puede ser **HTTPS** o **HTTP**
+Que puede ser **HTTPS** o **HTTP**.
 2. La ruta
 Puede ser un nombre o una IP, si es un nombre ha de estar asociado a una IP, mediante un DNS. 
-En caso de que la aplicación se ejecute en el mismo equipo desde el que se accede la ruta puede ser la **127.0.0.1** o **localhost**
+En caso de que la aplicación se ejecute en el mismo equipo desde el que se accede la ruta puede ser la **127.0.0.1** o **localhost**.
 3. El puerto
-Por defecto si no es especificado los navegadores acceden al puerto **80**
+Por defecto si no es especificado los navegadores acceden al puerto **80**.
 
 La ruta se compondría por 
 ```
@@ -284,6 +286,51 @@ Por ejemplo la ruta por defecto de la aplicación sería
 ```
 https://localhost:3000
 ```
+### Modificación del estilo
+
+**Es posible modificar los colores de la aplicación sin tocar modificar el código**.
+
+Para ello, es necesario modificar [tailwind.config.js](./tailwind.config.js).
+
+Ciertas partes, como las cabeceras, los botones, las etiquetas... Tienen asociada una propiedad de la que dependen sus colores. Evitando tener que modificar el código fuente.
+
+Antes de nada es necesario descargar el [código fuente](#instalar-desde-el-código-fuente).
+
+El fichero de tailwind contiene otras configuraciones. Para cambiar los colores es necesario buscar la propiedad ` extend: {}`.
+
+Dentro de este, habrá tres propiedades: 
+* **backgroundColor**, donde se establecen los colores de los fondos
+* **textColor**, dondde se establecen los colores de los textos
+* **borderColor**, dondde se establecen los colores de los bordes
+
+Algo mas o menos asi (pero con sus propiedades y respectivos valores): 
+
+```javascript
+    extend: {
+      backgroundColor: {
+        //Comentario  
+        propiedad: "valor",
+        propiedad: {}
+      },
+      textColor: {
+        propiedad: "valor",
+        propiedad: {}
+      },
+      borderColor: {
+        propiedad: "valor",
+        propiedad: {}
+      },
+```
+
+El propio archivo está comentado, para facilitar los cambios de los colores. 
+
+Los valores pueden asigarse de multiples formas, sin embargo la mas sencilla es con códigos hexadecimales `#FFFFFF` (hay una palabra reservada **transparent** para hacer el color transparente).
+
+Para mas información la [guía oficial](https://tailwindcss.com/docs/configuration).
+
+En caso de que el código esté compilado, no es necesario compilarlo de nuevo, ejecuta `npm run build:css`, para generar el archivo css. 
+
+Tampoco es necesario reiniciar el servidor, en caso de que esté en ejecución, al no modificar los archivos fuente del servidor. Solo será necesario **recargar** la página.
 
 ### Entornos de ejecución 
 
@@ -293,13 +340,13 @@ Ambos necesitan únicamente **Node** y **NPM** para funcionar.
 
 Para el desarrollo es recomendable el uso de [git](https://git-scm.com) o alguna aplicación similar, para el versionado del código, tener un navegador web como [Chrome](https://www.google.com/intl/es_es/chrome/) o [Firefox](https://www.mozilla.org/firefox/download/thanks/), el uso de un **IDE**.
 
-El IDE usado para el desarrollo de la aplicación ha sido [visual studio code](https://code.visualstudio.com/)
+El IDE usado para el desarrollo de la aplicación ha sido [visual studio code](https://code.visualstudio.com/).
 
-En el entorno de explotación es recomendable un sistema para la administración remota. Por ejemplo **SSH**
+En el entorno de explotación es recomendable un sistema para la administración remota. Por ejemplo **SSH**.
 
 ### Depuración del código
 
 La forma mas cómoda y fácil de depurar es mediante `console.log()`, el cual permite mostrar mensajes y valores de variables en la consola en la que se ejecuta la aplicación. 
 
 También es posible ejecutar la aplicación en **modo debug**. Permitiendo hacer puntos de ruptura e inspeccionar el valor de las variables. Hay varias formas dependiendo del editor. 
-Estas pueden verse la [documentación oficial](https://nodejs.org/en/docs/guides/debugging-getting-started/) 
+Estas pueden verse la [documentación oficial](https://nodejs.org/en/docs/guides/debugging-getting-started/).
