@@ -12,7 +12,7 @@ module.exports = {
     fontFamily: {
       Abel: ['Abel', 'sans-serif'],
       Hind: ['Hind', 'sans-serif'],
-      Mukta: ['Mukta', 'sans-serif']
+      sans: ['Mukta', 'sans-serif']
     },
     //Establece el tamaño maximo de los anchos
     maxWidth: {
