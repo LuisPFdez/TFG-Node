@@ -170,7 +170,7 @@ export default class UsuarioDB {
      * @param password contraseña del usuario
      * @returns si ha sido modificado
      */
-    static async modificarPassword(codUsuario: string, password: string,): Promise<boolean> {
+    static async modificarPassword(codUsuario: string, password: string): Promise<boolean> {
         //Si el codigo no existe devuelve false
         if (! await UsuarioDB.validarCodExiste(codUsuario)) {
             return false;
