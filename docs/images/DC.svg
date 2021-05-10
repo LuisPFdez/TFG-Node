@@ -1,0 +1,2363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="Main.svg"
+   id="svg1252"
+   height="965"
+   width="1370.3916015625"
+   version="1.1">
+  <metadata
+     id="metadata1256">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg1252"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="415.7275"
+     inkscape:cx="502.76132"
+     inkscape:zoom="1.0515853"
+     showgrid="false"
+     id="namedview1254"
+     inkscape:window-height="1057"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs2" />
+  <g
+     id="g4287">
+    <g
+       id="g468"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect466"
+         opacity="0.2"
+         height="208"
+         width="771.33447"
+         y="135"
+         x="615"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g472"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect470"
+         height="208"
+         width="771.33447"
+         y="128"
+         x="608"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g476"
+       transform="translate(-46,-118)">
+      <path
+         id="path474"
+         stroke-miterlimit="10"
+         d="m 608,128 h 771.3345 V 336 H 608 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g480"
+       transform="translate(-46,-118)">
+      <path
+         id="path478"
+         stroke-miterlimit="10"
+         d="m 608,153 h 771.3345"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g484"
+       transform="translate(-46,-118)">
+      <path
+         id="path482"
+         stroke-miterlimit="10"
+         d="m 608,163 h 771.3345"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g492"
+       transform="translate(-46,-118)">
+      <g
+         id="g490">
+        <path
+           id="path486"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text488"
+           y="147.5"
+           x="931.89185"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">validacionFormuarios</text>
+      </g>
+    </g>
+    <g
+       id="g502"
+       transform="translate(-46,-118)">
+      <g
+         id="g500">
+        <path
+           id="path494"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text496"
+           y="180.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">-concatenar(texto: stNull, mensaje: stNull): stNull</text>
+        <path
+           id="path498"
+           stroke-miterlimit="10"
+           d="M 613,180.5 H 894.04248"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g512"
+       transform="translate(-46,-118)">
+      <g
+         id="g510">
+        <path
+           id="path504"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text506"
+           y="195.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+comprobarAlfabetico(cadena: string, maxTamanio: number = 1000, minTamanio: number = 1, obligatorio: boolean = true): stNull</text>
+        <path
+           id="path508"
+           stroke-miterlimit="10"
+           d="m 613,195.5 h 741.3999"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g522"
+       transform="translate(-46,-118)">
+      <g
+         id="g520">
+        <path
+           id="path514"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text516"
+           y="210.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+comprobarAlfaNumerico(cadena: string, maxTamanio: number = 1000, minTamanio: number = 1, obligatorio: boolean = true): stNull</text>
+        <path
+           id="path518"
+           stroke-miterlimit="10"
+           d="m 613,210.5 h 762.3345"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g532"
+       transform="translate(-46,-118)">
+      <g
+         id="g530">
+        <path
+           id="path524"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text526"
+           y="225.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+validarCodUsuario(codigo: string, maxTamanio: number = 1000, minTamanio: number = 1, obligatorio: boolean = true): stNull</text>
+        <path
+           id="path528"
+           stroke-miterlimit="10"
+           d="m 613,225.5 h 724.769"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g542"
+       transform="translate(-46,-118)">
+      <g
+         id="g540">
+        <path
+           id="path534"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text536"
+           y="240.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+validarPassword(passwd: string, maximo: number = 16, minimo: number = 2, tipo: number = 2, obligatorio: boolean = true): stNull</text>
+        <path
+           id="path538"
+           stroke-miterlimit="10"
+           d="m 613,240.5 h 749.6646"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g552"
+       transform="translate(-46,-118)">
+      <g
+         id="g550">
+        <path
+           id="path544"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text546"
+           y="255.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+comprobarMaxTamanio(cadena: string, tamanio: number): stNull</text>
+        <path
+           id="path548"
+           stroke-miterlimit="10"
+           d="M 613,255.5 H 991.25049"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g562"
+       transform="translate(-46,-118)">
+      <g
+         id="g560">
+        <path
+           id="path554"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text556"
+           y="270.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+comprobarMinTamanio(cadena: string, tamanio: number): stNull</text>
+        <path
+           id="path558"
+           stroke-miterlimit="10"
+           d="M 613,270.5 H 987.63867"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g572"
+       transform="translate(-46,-118)">
+      <g
+         id="g570">
+        <path
+           id="path564"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text566"
+           y="285.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+comprobarNoVacio(cadena: string): stNull</text>
+        <path
+           id="path568"
+           stroke-miterlimit="10"
+           d="M 613,285.5 H 860.95215"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+  </g>
+  <g
+     id="g4231">
+    <g
+       id="g576"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect574"
+         opacity="0.2"
+         height="115"
+         width="327"
+         y="375"
+         x="615"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g580"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect578"
+         height="115"
+         width="327"
+         y="368"
+         x="608"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g584"
+       transform="translate(-46,-118)">
+      <path
+         id="path582"
+         stroke-miterlimit="10"
+         d="M 608,368 H 935 V 483 H 608 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g588"
+       transform="translate(-46,-118)">
+      <path
+         id="path586"
+         stroke-miterlimit="10"
+         d="M 608,406 H 935"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g592"
+       transform="translate(-46,-118)">
+      <path
+         id="path590"
+         stroke-miterlimit="10"
+         d="M 608,474 H 935"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g600"
+       transform="translate(-46,-118)">
+      <g
+         id="g598">
+        <path
+           id="path594"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text596"
+           y="385.5"
+           x="742.59277"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«Interfaz»</text>
+      </g>
+    </g>
+    <g
+       id="g608"
+       transform="translate(-46,-118)">
+      <g
+         id="g606">
+        <path
+           id="path602"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text604"
+           y="400.5"
+           x="704.65918"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">ObjetoUsuarioInterface</text>
+      </g>
+    </g>
+    <g
+       id="g616"
+       transform="translate(-46,-118)">
+      <g
+         id="g614">
+        <path
+           id="path610"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text612"
+           y="423.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+codUsuario: string</text>
+      </g>
+    </g>
+    <g
+       id="g624"
+       transform="translate(-46,-118)">
+      <g
+         id="g622">
+        <path
+           id="path618"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text620"
+           y="438.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+password: string</text>
+      </g>
+    </g>
+    <g
+       id="g632"
+       transform="translate(-46,-118)">
+      <g
+         id="g630">
+        <path
+           id="path626"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text628"
+           y="453.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+descripcion: string</text>
+      </g>
+    </g>
+    <g
+       id="g640"
+       transform="translate(-46,-118)">
+      <g
+         id="g638">
+        <path
+           id="path634"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text636"
+           y="468.5"
+           x="613"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+tipo: string</text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g4195">
+    <g
+       id="g644"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect642"
+         opacity="0.2"
+         height="100"
+         width="210.98877"
+         y="383"
+         x="951"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g648"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect646"
+         height="100"
+         width="210.98877"
+         y="376"
+         x="944"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g652"
+       transform="translate(-46,-118)">
+      <path
+         id="path650"
+         stroke-miterlimit="10"
+         d="m 944,376 h 210.9888 V 476 H 944 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g656"
+       transform="translate(-46,-118)">
+      <path
+         id="path654"
+         stroke-miterlimit="10"
+         d="m 944,414 h 210.9888"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g660"
+       transform="translate(-46,-118)">
+      <path
+         id="path658"
+         stroke-miterlimit="10"
+         d="m 944,467 h 210.9888"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g668"
+       transform="translate(-46,-118)">
+      <g
+         id="g666">
+        <path
+           id="path662"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text664"
+           y="393.5"
+           x="1020.5872"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«Interfaz»</text>
+      </g>
+    </g>
+    <g
+       id="g676"
+       transform="translate(-46,-118)">
+      <g
+         id="g674">
+        <path
+           id="path670"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text672"
+           y="408.5"
+           x="1002.8835"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">RenderInterface</text>
+      </g>
+    </g>
+    <g
+       id="g684"
+       transform="translate(-46,-118)">
+      <g
+         id="g682">
+        <path
+           id="path678"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text680"
+           y="431.5"
+           x="949"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+titulo: string</text>
+      </g>
+    </g>
+    <g
+       id="g692"
+       transform="translate(-46,-118)">
+      <g
+         id="g690">
+        <path
+           id="path686"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text688"
+           y="446.5"
+           x="949"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+archivo: string</text>
+      </g>
+    </g>
+    <g
+       id="g700"
+       transform="translate(-46,-118)">
+      <g
+         id="g698">
+        <path
+           id="path694"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text696"
+           y="461.5"
+           x="949"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+datos?: Record&lt;string, unknown&gt;</text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g3890">
+    <g
+       id="g704"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect702"
+         opacity="0.2"
+         height="143"
+         width="254.28613"
+         y="519"
+         x="967"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g708"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect706"
+         height="143"
+         width="254.28613"
+         y="512"
+         x="960"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g712"
+       transform="translate(-46,-118)">
+      <path
+         id="path710"
+         stroke-miterlimit="10"
+         d="m 960,512 h 254.2861 V 655 H 960 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g716"
+       transform="translate(-46,-118)">
+      <path
+         id="path714"
+         stroke-miterlimit="10"
+         d="m 960,550 h 254.2861"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g720"
+       transform="translate(-46,-118)">
+      <path
+         id="path718"
+         stroke-miterlimit="10"
+         d="m 960,618 h 254.2861"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g728"
+       transform="translate(-46,-118)">
+      <g
+         id="g726">
+        <path
+           id="path722"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text724"
+           y="529.5"
+           x="1058.2358"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«Interfaz»</text>
+      </g>
+    </g>
+    <g
+       id="g736"
+       transform="translate(-46,-118)">
+      <g
+         id="g734">
+        <path
+           id="path730"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text732"
+           y="544.5"
+           x="1039.4531"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">UsuarioInterface</text>
+      </g>
+    </g>
+    <g
+       id="g744"
+       transform="translate(-46,-118)">
+      <g
+         id="g742">
+        <path
+           id="path738"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text740"
+           y="567.5"
+           x="965"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+codUsuario: string</text>
+      </g>
+    </g>
+    <g
+       id="g752"
+       transform="translate(-46,-118)">
+      <g
+         id="g750">
+        <path
+           id="path746"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text748"
+           y="582.5"
+           x="965"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+password: string</text>
+      </g>
+    </g>
+    <g
+       id="g760"
+       transform="translate(-46,-118)">
+      <g
+         id="g758">
+        <path
+           id="path754"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text756"
+           y="597.5"
+           x="965"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+descripcion: string</text>
+      </g>
+    </g>
+    <g
+       id="g768"
+       transform="translate(-46,-118)">
+      <g
+         id="g766">
+        <path
+           id="path762"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text764"
+           y="612.5"
+           x="965"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+tipo: string</text>
+      </g>
+    </g>
+    <g
+       id="g776"
+       transform="translate(-46,-118)">
+      <g
+         id="g774">
+        <path
+           id="path770"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text772"
+           y="635.5"
+           x="965"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+cambiarPassword(password: string): void</text>
+      </g>
+    </g>
+    <g
+       id="g784"
+       transform="translate(-46,-118)">
+      <g
+         id="g782">
+        <path
+           id="path778"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text780"
+           y="650.5"
+           x="965"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+crearObjecto(): ObjetoUsuarioInterface</text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g3950">
+    <g
+       id="g788"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect786"
+         opacity="0.2"
+         height="190"
+         width="654.3916"
+         y="839"
+         x="759"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g792"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect790"
+         height="190"
+         width="654.3916"
+         y="832"
+         x="752"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g796"
+       transform="translate(-46,-118)">
+      <path
+         id="path794"
+         stroke-miterlimit="10"
+         d="m 752,832 h 654.3916 v 190 H 752 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g800"
+       transform="translate(-46,-118)">
+      <path
+         id="path798"
+         stroke-miterlimit="10"
+         d="m 752,857 h 654.3916"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g804"
+       transform="translate(-46,-118)">
+      <path
+         id="path802"
+         stroke-miterlimit="10"
+         d="m 752,925 h 654.3916"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g812"
+       transform="translate(-46,-118)">
+      <g
+         id="g810">
+        <path
+           id="path806"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text808"
+           y="851.5"
+           x="1056.7981"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">Usuario</text>
+      </g>
+    </g>
+    <g
+       id="g820"
+       transform="translate(-46,-118)">
+      <g
+         id="g818">
+        <path
+           id="path814"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text816"
+           y="874.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+codUsuario: string</text>
+      </g>
+    </g>
+    <g
+       id="g828"
+       transform="translate(-46,-118)">
+      <g
+         id="g826">
+        <path
+           id="path822"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text824"
+           y="889.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+password: string</text>
+      </g>
+    </g>
+    <g
+       id="g836"
+       transform="translate(-46,-118)">
+      <g
+         id="g834">
+        <path
+           id="path830"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text832"
+           y="904.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+descripcion: string</text>
+      </g>
+    </g>
+    <g
+       id="g844"
+       transform="translate(-46,-118)">
+      <g
+         id="g842">
+        <path
+           id="path838"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text840"
+           y="919.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+tipo: string</text>
+      </g>
+    </g>
+    <g
+       id="g852"
+       transform="translate(-46,-118)">
+      <g
+         id="g850">
+        <path
+           id="path846"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text848"
+           y="942.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+constructor(codUsuario: string, password: string, descripcion: string, tipo: stNull = &quot;USUARIO&quot;, encriptar = true)</text>
+      </g>
+    </g>
+    <g
+       id="g860"
+       transform="translate(-46,-118)">
+      <g
+         id="g858">
+        <path
+           id="path854"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text856"
+           y="957.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+cambiarPassword(password: string): void</text>
+      </g>
+    </g>
+    <g
+       id="g868"
+       transform="translate(-46,-118)">
+      <g
+         id="g866">
+        <path
+           id="path862"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text864"
+           y="972.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+crearObjecto(): ObjetoUsuarioInterface</text>
+      </g>
+    </g>
+    <g
+       id="g878"
+       transform="translate(-46,-118)">
+      <g
+         id="g876">
+        <path
+           id="path870"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text872"
+           y="987.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+encriptarPassword(codUsuario: string, password: string): string</text>
+        <path
+           id="path874"
+           stroke-miterlimit="10"
+           d="m 757,987.5 h 369.5605"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g888"
+       transform="translate(-46,-118)">
+      <g
+         id="g886">
+        <path
+           id="path880"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text882"
+           y="1002.5"
+           x="757"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+crearUsuarioDeObjeto(objeto: ObjetoUsuarioInterface, encriptar = false): UsuarioInterface</text>
+        <path
+           id="path884"
+           stroke-miterlimit="10"
+           d="m 757,1002.5 h 524.5894"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+  </g>
+  <g
+     id="g4163">
+    <g
+       id="g892"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect890"
+         opacity="0.2"
+         height="162"
+         width="675.89111"
+         y="503"
+         x="271"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g896"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect894"
+         height="162"
+         width="675.89111"
+         y="496"
+         x="264"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g900"
+       transform="translate(-46,-118)">
+      <path
+         id="path898"
+         stroke-miterlimit="10"
+         d="M 264,496 H 939.89111 V 658 H 264 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g904"
+       transform="translate(-46,-118)">
+      <path
+         id="path902"
+         stroke-miterlimit="10"
+         d="M 264,521 H 939.89111"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g908"
+       transform="translate(-46,-118)">
+      <path
+         id="path906"
+         stroke-miterlimit="10"
+         d="M 264,531 H 939.89111"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g916"
+       transform="translate(-46,-118)">
+      <g
+         id="g914">
+        <path
+           id="path910"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text912"
+           y="515.5"
+           x="570.51831"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">UsuarioDB</text>
+      </g>
+    </g>
+    <g
+       id="g926"
+       transform="translate(-46,-118)">
+      <g
+         id="g924">
+        <path
+           id="path918"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text920"
+           y="548.5"
+           x="269"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+validarCodExiste(codUsuario: string): Promise&lt;boolean&gt;</text>
+        <path
+           id="path922"
+           stroke-miterlimit="10"
+           d="M 269,548.5 H 603.91504"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g936"
+       transform="translate(-46,-118)">
+      <g
+         id="g934">
+        <path
+           id="path928"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text930"
+           y="563.5"
+           x="269"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«async»+validadUsuario(codUsuario: string, password: string): Promise&lt;usNull&gt;</text>
+        <path
+           id="path932"
+           stroke-miterlimit="10"
+           d="M 269,563.5 H 732.51221"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g946"
+       transform="translate(-46,-118)">
+      <g
+         id="g944">
+        <path
+           id="path938"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text940"
+           y="578.5"
+           x="269"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«async»+buscarUsuario(codUsuario: string): Promise&lt;usNull&gt;</text>
+        <path
+           id="path942"
+           stroke-miterlimit="10"
+           d="M 269,578.5 H 628.46143"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g956"
+       transform="translate(-46,-118)">
+      <g
+         id="g954">
+        <path
+           id="path948"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text950"
+           y="593.5"
+           x="269"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«async»+borrarUsuario(codUsuario: string): Promise&lt;boolean&gt;</text>
+        <path
+           id="path952"
+           stroke-miterlimit="10"
+           d="M 269,593.5 H 634.26318"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g966"
+       transform="translate(-46,-118)">
+      <g
+         id="g964">
+        <path
+           id="path958"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text960"
+           y="608.5"
+           x="269"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«async»+crearUsuario(codUsuario: string, password: string, descripcion: string, tipo: stNull = null): Promise&lt;usNull&gt;</text>
+        <path
+           id="path962"
+           stroke-miterlimit="10"
+           d="M 269,608.5 H 935.89111"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g976"
+       transform="translate(-46,-118)">
+      <g
+         id="g974">
+        <path
+           id="path968"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text970"
+           y="623.5"
+           x="269"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«async»+modificarUSuario(codUsuario: string, descripcion: string, tipo: stNull = null): Promise&lt;boolean&gt;</text>
+        <path
+           id="path972"
+           stroke-miterlimit="10"
+           d="M 269,623.5 H 869.4502"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g986"
+       transform="translate(-46,-118)">
+      <g
+         id="g984">
+        <path
+           id="path978"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text980"
+           y="638.5"
+           x="269"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«async»+modificarPassword(codUsuario: string, password: string): Promise&lt;boolean&gt;</text>
+        <path
+           id="path982"
+           stroke-miterlimit="10"
+           d="M 269,638.5 H 766.47852"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+    <g
+       id="g996"
+       transform="translate(-46,-118)">
+      <g
+         id="g994">
+        <path
+           id="path988"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text990"
+           y="653.5"
+           x="269"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">«async»+listarUsuarios(): Promise&lt;Array&lt;UsuarioInterface&gt;&gt;</text>
+        <path
+           id="path992"
+           stroke-miterlimit="10"
+           d="M 269,653.5 H 624.11963"
+           stroke="#000000"
+           fill="none" />
+      </g>
+    </g>
+  </g>
+  <g
+     id="g4107">
+    <g
+       id="g1044"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1042"
+         opacity="0.2"
+         height="44"
+         width="50.919922"
+         y="695"
+         x="647"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g1048"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1046"
+         height="44"
+         width="50.919922"
+         y="688"
+         x="640"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g1052"
+       transform="translate(-46,-118)">
+      <path
+         id="path1050"
+         stroke-miterlimit="10"
+         d="m 640,688 h 50.91992 v 44 H 640 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1056"
+       transform="translate(-46,-118)">
+      <path
+         id="path1054"
+         stroke-miterlimit="10"
+         d="m 640,713 h 50.91992"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1060"
+       transform="translate(-46,-118)">
+      <path
+         id="path1058"
+         stroke-miterlimit="10"
+         d="m 640,723 h 50.91992"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1068"
+       transform="translate(-46,-118)">
+      <g
+         id="g1066">
+        <path
+           id="path1062"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1064"
+           y="707.5"
+           x="651.01587"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">Error</text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g4091">
+    <g
+       id="g1072"
+       transform="translate(-46,-118)">
+      <path
+         id="path1070"
+         stroke-miterlimit="10"
+         d="m 567,823 78,-90"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1076"
+       transform="translate(-46,-118)">
+      <path
+         id="path1074"
+         d="M 638.05048,753.87353 645,733 l -19.67387,9.84576"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+  </g>
+  <g
+     transform="translate(-46,-118)"
+     id="g1080">
+    <path
+       fill="none"
+       stroke="#000000"
+       d="M 638.05048,753.87353 645,733 l -19.67387,9.84576 12.72435,11.02777"
+       stroke-miterlimit="10"
+       id="path1078" />
+  </g>
+  <g
+     id="g4066">
+    <g
+       id="g1084"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1082"
+         opacity="0.2"
+         height="57"
+         width="257.18701"
+         y="863"
+         x="63"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g1088"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1086"
+         height="57"
+         width="257.18701"
+         y="856"
+         x="56"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g1092"
+       transform="translate(-46,-118)">
+      <path
+         id="path1090"
+         stroke-miterlimit="10"
+         d="m 56,856 h 257.18701 v 57 H 56 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1096"
+       transform="translate(-46,-118)">
+      <path
+         id="path1094"
+         stroke-miterlimit="10"
+         d="M 56,881 H 313.18701"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1100"
+       transform="translate(-46,-118)">
+      <path
+         id="path1098"
+         stroke-miterlimit="10"
+         d="M 56,891 H 313.18701"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1108"
+       transform="translate(-46,-118)">
+      <g
+         id="g1106">
+        <path
+           id="path1102"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1104"
+           y="875.5"
+           x="161.11987"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">ErrorDB</text>
+      </g>
+    </g>
+    <g
+       id="g1116"
+       transform="translate(-46,-118)">
+      <g
+         id="g1114">
+        <path
+           id="path1110"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1112"
+           y="908.5"
+           x="61"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+constructor(msg: string, codigo?: number)</text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g4046">
+    <g
+       id="g1120"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1118"
+         opacity="0.2"
+         height="57"
+         width="257.18701"
+         y="927"
+         x="199"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g1124"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1122"
+         height="57"
+         width="257.18701"
+         y="920"
+         x="192"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g1128"
+       transform="translate(-46,-118)">
+      <path
+         id="path1126"
+         stroke-miterlimit="10"
+         d="m 192,920 h 257.18701 v 57 H 192 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1132"
+       transform="translate(-46,-118)">
+      <path
+         id="path1130"
+         stroke-miterlimit="10"
+         d="M 192,945 H 449.18701"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1136"
+       transform="translate(-46,-118)">
+      <path
+         id="path1134"
+         stroke-miterlimit="10"
+         d="M 192,955 H 449.18701"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1144"
+       transform="translate(-46,-118)">
+      <g
+         id="g1142">
+        <path
+           id="path1138"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1140"
+           y="939.5"
+           x="288.80444"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">ErrorRoute</text>
+      </g>
+    </g>
+    <g
+       id="g1152"
+       transform="translate(-46,-118)">
+      <g
+         id="g1150">
+        <path
+           id="path1146"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1148"
+           y="972.5"
+           x="197"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+constructor(msg: string, codigo?: number)</text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g3976">
+    <g
+       id="g1156"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1154"
+         opacity="0.2"
+         height="57"
+         width="257.18701"
+         y="1023"
+         x="319"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g1160"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1158"
+         height="57"
+         width="257.18701"
+         y="1016"
+         x="312"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g1164"
+       transform="translate(-46,-118)">
+      <path
+         id="path1162"
+         stroke-miterlimit="10"
+         d="m 312,1016 h 257.18701 v 57 H 312 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1168"
+       transform="translate(-46,-118)">
+      <path
+         id="path1166"
+         stroke-miterlimit="10"
+         d="M 312,1041 H 569.18701"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1172"
+       transform="translate(-46,-118)">
+      <path
+         id="path1170"
+         stroke-miterlimit="10"
+         d="M 312,1051 H 569.18701"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1180"
+       transform="translate(-46,-118)">
+      <g
+         id="g1178">
+        <path
+           id="path1174"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1176"
+           y="1035.5"
+           x="403.75171"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">ErrorUsuario</text>
+      </g>
+    </g>
+    <g
+       id="g1188"
+       transform="translate(-46,-118)">
+      <g
+         id="g1186">
+        <path
+           id="path1182"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1184"
+           y="1068.5"
+           x="317"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+constructor(msg: string, codigo?: number)</text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g4000">
+    <g
+       id="g1192"
+       transform="translate(-46,-118)">
+      <path
+         id="path1190"
+         stroke-miterlimit="10"
+         d="m 314,875 93,-7"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1196"
+       transform="translate(-46,-118)">
+      <path
+         id="path1194"
+         d="M 387.36389,877.92084 407,868 386.10008,861.13026"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+  </g>
+  <g
+     transform="translate(-46,-118)"
+     id="g1200">
+    <path
+       fill="none"
+       stroke="#000000"
+       d="M 387.36389,877.92084 407,868 l -20.89992,-6.86974 1.26381,16.79058"
+       stroke-miterlimit="10"
+       id="path1198" />
+  </g>
+  <g
+     id="g3994">
+    <g
+       id="g1204"
+       transform="translate(-46,-118)">
+      <path
+         id="path1202"
+         stroke-miterlimit="10"
+         d="m 390,919 59,-24"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1208"
+       transform="translate(-46,-118)">
+      <path
+         id="path1206"
+         d="M 433.345,910.45707 449,895 427.00045,894.86004"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+  </g>
+  <g
+     id="g4026">
+    <g
+       id="g1000"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect998"
+         opacity="0.2"
+         height="70"
+         width="257.18701"
+         y="831"
+         x="415"
+         stroke="none"
+         fill="#c0c0c0" />
+    </g>
+    <g
+       id="g1004"
+       transform="translate(-46,-118)">
+      <rect
+         id="rect1002"
+         height="70"
+         width="257.18701"
+         y="824"
+         x="408"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+    <g
+       id="g1008"
+       transform="translate(-46,-118)">
+      <path
+         id="path1006"
+         stroke-miterlimit="10"
+         d="m 408,824 h 257.18701 v 70 H 408 Z"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1012"
+       transform="translate(-46,-118)">
+      <path
+         id="path1010"
+         stroke-miterlimit="10"
+         d="M 408,849 H 665.18701"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1016"
+       transform="translate(-46,-118)">
+      <path
+         id="path1014"
+         stroke-miterlimit="10"
+         d="M 408,872 H 665.18701"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1024"
+       transform="translate(-46,-118)">
+      <g
+         id="g1022">
+        <path
+           id="path1018"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1020"
+           y="843.5"
+           x="502.88428"
+           text-decoration="none"
+           font-weight="bold"
+           font-style="italic"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">CodigoError</text>
+      </g>
+    </g>
+    <g
+       id="g1032"
+       transform="translate(-46,-118)">
+      <g
+         id="g1030">
+        <path
+           id="path1026"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1028"
+           y="866.5"
+           x="413"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+codigo</text>
+      </g>
+    </g>
+    <g
+       id="g1040"
+       transform="translate(-46,-118)">
+      <g
+         id="g1038">
+        <path
+           id="path1034"
+           stroke="none"
+           fill="none"
+           d="" />
+        <text
+           style="text-decoration:none;text-decoration-line:none"
+           id="text1036"
+           y="889.5"
+           x="413"
+           text-decoration="none"
+           font-weight="normal"
+           font-style="normal"
+           font-size="13px"
+           font-family="Arial"
+           stroke="none"
+           fill="#000000">+constructor(msg: string, codigo?: number)</text>
+      </g>
+    </g>
+    <g
+       id="g1212"
+       transform="translate(-46,-118)">
+      <path
+         id="path1210"
+         stroke-miterlimit="10"
+         d="M 433.345,910.45707 449,895 l -21.99955,-0.13996 6.34455,15.59703"
+         stroke="#000000"
+         fill="none" />
+    </g>
+  </g>
+  <g
+     id="g3988">
+    <g
+       id="g1216"
+       transform="translate(-46,-118)">
+      <path
+         id="path1214"
+         stroke-miterlimit="10"
+         d="M 455,1015 517,895"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1220"
+       transform="translate(-46,-118)">
+      <path
+         id="path1218"
+         d="M 515.14995,916.92207 517,895 500.19057,909.19306"
+         stroke="none"
+         fill="#ffffff" />
+    </g>
+  </g>
+  <g
+     transform="translate(-46,-118)"
+     id="g1224">
+    <path
+       fill="none"
+       stroke="#000000"
+       d="M 515.14995,916.92207 517,895 l -16.80943,14.19306 14.95938,7.72901"
+       stroke-miterlimit="10"
+       id="path1222" />
+  </g>
+  <g
+     id="g3896">
+    <g
+       id="g1228"
+       transform="translate(-46,-118)">
+      <path
+         id="path1226"
+         stroke-miterlimit="10"
+         d="m 1081,831 4,-175"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1232"
+       transform="translate(-46,-118)">
+      <path
+         id="path1230"
+         stroke-miterlimit="10"
+         d="M 1088.9762,666.25621 1085,656 l -4.4406,10.06383"
+         stroke="#000000"
+         fill="none" />
+    </g>
+  </g>
+  <g
+     id="g3956">
+    <g
+       id="g1236"
+       transform="translate(-46,-118)">
+      <path
+         id="path1234"
+         stroke-dasharray="3"
+         stroke-miterlimit="10"
+         d="m 751,987 -181,33"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1240"
+       transform="translate(-46,-118)">
+      <path
+         id="path1238"
+         stroke-miterlimit="10"
+         d="M 579.24283,1014.0359 570,1020 l 10.7529,2.3184"
+         stroke="#000000"
+         fill="none" />
+    </g>
+  </g>
+  <g
+     id="g4072">
+    <g
+       id="g1244"
+       transform="translate(-46,-118)">
+      <path
+         id="path1242"
+         stroke-dasharray="3"
+         stroke-miterlimit="10"
+         d="M 490,659 223,855"
+         stroke="#000000"
+         fill="none" />
+    </g>
+    <g
+       id="g1248"
+       transform="translate(-46,-118)">
+      <path
+         id="path1246"
+         stroke-miterlimit="10"
+         d="M 228.7013,845.59281 223,855 l 10.68331,-2.62046"
+         stroke="#000000"
+         fill="none" />
+    </g>
+  </g>
+</svg>
